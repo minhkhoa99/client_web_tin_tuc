@@ -2,7 +2,7 @@ import "./App.css";
 import Registration from "./pages/Registration/Registration";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import HomePages from "./pages/Login/homePages";
+import HomePages from "./pages/homePages/homePages";
 function App() {
   return (
     <div className="App">
