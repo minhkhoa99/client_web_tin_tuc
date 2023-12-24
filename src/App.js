@@ -1,5 +1,5 @@
 import "./App.css";
-import Registration from "./pages/Registration/Registration";
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import HomePages from "./pages/homePages/homePages";
@@ -10,7 +10,7 @@ function App() {
       
       <Routes>
       <Route path="/pages/home" element = {<HomePages/>}></Route>
-      <Route path="/user/register" element={  <Registration />}></Route>
+      {/* <Route path="/user/register" element={  <Registration />}></Route> */}
       </Routes>
     
       </BrowserRouter>
