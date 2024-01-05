@@ -1,28 +1,30 @@
-import "./Media.css";
-import axios from "axios";
+import "./Movies.css"
 import imageContent from "../../image/THE THAO_jpg.jpg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Media = () => {
-  const [data,setData] = useState([])
-  const navigate = useNavigate()
+const Movies = () => {
+  const [dataNew, setDataNew] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    axios.get("http://localhost:8000/new/")
-    .then((data) => setData(data.data.data))
-    .catch((err) => console.log(err))
-  },[])
-  const newMedia = data.filter((e) => e.CategoryId === 2)
+    axios
+      .get("http://localhost:8000/new/")
+      .then((data) => setDataNew(data.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+  const newsEvent = dataNew.filter((e) => e.CategoryId === 4)
+
   const handleClick = (id) => {
-    navigate(`/promotional-media/${id}`);
+    navigate(`/news/${id}`);
   };
-  
+
   return (
     <div className="media-container text-center">
       <h2>
-        TRUYỀN THÔNG  - <span>CỔ ĐỘNG</span>{" "}
+        CHIẾU PHIM - <span>LƯU ĐỘNG</span>{" "}
       </h2>
-      {newMedia.map((items) => {
+      {newsEvent.map((items) => {
         return (
           <div className="row my-5 card-media pb-5" key={items.id}
           onClick={() => {
@@ -48,4 +50,4 @@ const Media = () => {
   );
 };
 
-export default Media;
+export default Movies;

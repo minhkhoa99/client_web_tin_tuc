@@ -1,13 +1,40 @@
 import "./HomePage.css";
 import image from "../../image/z4042263610199_ac6e69bf6f323b5fcf7a9b2df33b74de.jpg";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const [data, setData] = useState([]);
+  const navigate = useNavigate()
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/new/")
+      .then((data) => setData(data.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const newsEvent = data.filter((e) => e.CategoryId === 1);
+  const newEventData = newsEvent.slice(0, 4);
+  const media = data.filter((e) => e.CategoryId === 2);
+  const newMedia = media.slice(0, 4);
+  const movies = data.filter((e) => e.CategoryId === 4);
+  const newMovies = movies.slice(0, 4);
+  const propagate = data.filter((e) => e.CategoryId === 3);
+  const newPropagate = propagate.slice(0, 4);
+  const dataPublic = data.filter((e) => e.CategoryId === 5);
+  const newPublic = dataPublic.slice(0, 4);
+
+  const handleClick = (id) => {
+    navigate(`/news/${id}`);
+  };
+
   return (
     <div className="my-5 row">
       <div className="home-page">
         <div className="divNewsTitle">
           <h2 className="mt-5 mb-5">
-            Tin Tức - <span>Sự Kiện</span>
+            TIN TỨC - <span>SỰ KIỆN</span>
           </h2>
           <div className="d-flex justify-content-between mb-5">
             <p>
@@ -21,68 +48,25 @@ const HomePage = () => {
           </div>
           <div className="container">
             <div className="row">
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
+              {newEventData.map((e) => {
+                return (
+                  <div className="col-3 card-news" key={e.id}
+                  onClick={() => {
+                    handleClick(e.id);
+                  }}>
+                    <img className="w-100 image-new" src={image} alt="" />
+                    <h3 className="text-truncate">{e.title}</h3>
+                    <p className="text-truncate">{e.shortTitle}</p>
+                    <button>Đọc thêm</button>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
         <div className="divNewsTitle my-5">
           <h2 className="mt-5 mb-5">
-            Tuyên Truyền Cổ Động - <span>Triển Lãm</span>
+            TUYÊN TRUYỀN CỔ ĐỘNG - <span>TRIỂN LÃM</span>
           </h2>
           <div className="d-flex justify-content-between mb-5">
             <p>
@@ -96,67 +80,24 @@ const HomePage = () => {
           </div>
           <div className="container">
             <div className="row">
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
+              {newMedia.map((e) => {
+                return (
+                  <div className="col-3 card-news" key={e.id}
+                  onClick={() => {
+                    handleClick(e.id);
+                  }}>
+                    <img className="w-100 image-new" src={image} alt="" />
+                    <h3 className="text-truncate">{e.title}</h3>
+                    <p className="text-truncate">{e.shortTitle}</p>
+                    <button>Đọc thêm</button>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
         <div className="propagate">
-          <h2 className="my-4">Nghệ Thuật Quần Chúng</h2>
+          <h2 className="my-4">NGHỆ THUẬT QUẦN CHÚNG</h2>
           <div className="d-flex justify-content-between mb-5">
             <p>
               Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
@@ -178,47 +119,23 @@ const HomePage = () => {
               </video>
             </div>
             <div className="col-5 cardMenu">
-              <div className="d-flex">
-                <img src={image} alt="" className="w-25 mx-3" />
-                <h3>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Animi, repellat.
-                </h3>
-              </div>
-              <div className="d-flex">
-                <img src={image} alt="" className="w-25 mx-3" />
-                <h3>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Animi, repellat.
-                </h3>
-              </div>
-              <div className="d-flex">
-                <img src={image} alt="" className="w-25 mx-3" />
-                <h3>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Animi, repellat.
-                </h3>
-              </div>
-              <div className="d-flex">
-                <img src={image} alt="" className="w-25 mx-3" />
-                <h3>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Animi, repellat.
-                </h3>
-              </div>
-              <div className="d-flex">
-                <img src={image} alt="" className="w-25 mx-3" />
-                <h3>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Animi, repellat.
-                </h3>
-              </div>
+              {newPublic.map((e) => {
+                return (
+                  <div className="d-flex card-item-menu my-3" key={e.id}
+                  onClick={() => {
+                    handleClick(e.id);
+                  }}>
+                    <img src={image} alt="" className="w-25 mx-3" />
+                    <h3 className="text-truncate">{e.title}</h3>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
         <div className="divNewsTitle my-5">
           <h2 className="mt-5 mb-5">
-            Tuyên Truyền - <span>Lưu Động</span>
+            TUYÊN TRUYỀN - <span>LƯU ĐỘNG</span>
           </h2>
           <div className="d-flex justify-content-between mb-5">
             <p>
@@ -232,68 +149,25 @@ const HomePage = () => {
           </div>
           <div className="container">
             <div className="row">
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
-              <div className="col-3 card-news">
-                <img className="w-100 image-new" src={image} alt="" />
-                <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, veniam.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  deleniti ab expedita quod ad iure, cumque, dolores esse
-                  officiis rem quibusdam incidunt perferendis odit illum
-                  perspiciatis, officia neque eveniet. Repellat.
-                </p>
-                <button>Đọc thêm</button>
-              </div>
+              {newPropagate.map((e) => {
+                return (
+                  <div className="col-3 card-news" key={e.id}
+                  onClick={() => {
+                    handleClick(e.id);
+                  }}>
+                    <img className="w-100 image-new" src={image} alt="" />
+                    <h3 className="text-truncate">{e.title}</h3>
+                    <p className="text-truncate">{e.shortTitle}</p>
+                    <button>Đọc thêm</button>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
         <div className="divNewsTitle divMovies">
           <h2 className="mt-5 mb-5">
-            Chiếu Phim - <span>Lưu Động</span>
+            CHIẾU PHIM - <span>LƯU ĐỘNG</span>
           </h2>
           <div className="d-flex justify-content-between mb-5">
             <p>
@@ -307,86 +181,21 @@ const HomePage = () => {
           </div>
           <div className="container">
             <div className="row">
-              <div className="col-6 card-news movies d-flex">
-                <img
-                  className="w-50 image-new-movies mx-3"
-                  src={image}
-                  alt=""
-                />
-                <div>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tenetur, veniam.
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni deleniti ab expedita quod ad iure, cumque, dolores
-                    esse officiis rem quibusdam incidunt perferendis odit illum
-                    perspiciatis, officia neque eveniet. Repellat.
-                  </p>
-                  <button>Đọc thêm</button>
-                </div>
-              </div>
-              <div className="col-6 card-news movies d-flex">
-                <img
-                  className="w-50 image-new-movies mx-3"
-                  src={image}
-                  alt=""
-                />
-                <div>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tenetur, veniam.
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni deleniti ab expedita quod ad iure, cumque, dolores
-                    esse officiis rem quibusdam incidunt perferendis odit illum
-                    perspiciatis, officia neque eveniet. Repellat.
-                  </p>
-                  <button>Đọc thêm</button>
-                </div>
-              </div>
-              <div className="col-6 card-news movies d-flex">
-                <img
-                  className="w-50 image-new-movies mx-3"
-                  src={image}
-                  alt=""
-                />
-                <div>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tenetur, veniam.
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni deleniti ab expedita quod ad iure, cumque, dolores
-                    esse officiis rem quibusdam incidunt perferendis odit illum
-                    perspiciatis, officia neque eveniet. Repellat.
-                  </p>
-                  <button>Đọc thêm</button>
-                </div>
-              </div>
-              <div className="col-6 card-news movies d-flex">
-                <img
-                  className="w-50 image-new-movies mx-3"
-                  src={image}
-                  alt=""
-                />
-                <div>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tenetur, veniam.
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni deleniti ab expedita quod ad iure, cumque, dolores
-                    esse officiis rem quibusdam incidunt perferendis odit illum
-                    perspiciatis, officia neque eveniet. Repellat.
-                  </p>
-                  <button>Đọc thêm</button>
-                </div>
-              </div>
+              {newMovies.map((e) => {
+                return (
+                  <div className="col-6 movies divMovies" key={e.id}
+                  onClick={() => {
+                    handleClick(e.id);
+                  }}>
+                    <img className="image-new-movies" src={image} alt="" />
+                    <div>
+                      <h3 className="text-truncate">{e.title}</h3>
+                      <p className="text-truncate">{e.shortTitle}</p>
+                      <button>Đọc thêm</button>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

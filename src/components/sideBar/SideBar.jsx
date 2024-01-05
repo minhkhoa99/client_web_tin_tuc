@@ -37,22 +37,39 @@ export default function SideBar() {
       </ul>
       <div className="menu my-5">
         <div>
-          <h3>Hệ Thông Điều Hành</h3>
+          <a href="/">
+            <h3>TRANG CHỦ</h3>
+          </a>
         </div>
         <div>
-          <h3>Hệ Thông Email Công Vụ</h3>
+          <a href="/introduce">
+            <h3>GIỚI THIỆU CHUNG</h3>
+          </a>
         </div>
         <div>
-          <h3>Hệ Thông Văn bản</h3>
+          <a href="/promotional-media">
+            <h3>TRUYỀN THÔNG CỔ ĐỘNG</h3>
+          </a>
         </div>
         <div>
-          <h3>Ảnh Hoạt Động</h3>
+          <a href="/public-art">
+            <h3>NGHỆ THUẬT QUẦN CHÚNG</h3>
+          </a>
         </div>
         <div>
-          <h3>Video Clips</h3>
+          <a href="/news">
+            <h3>TIN TỨC SỰ KIỆN</h3>
+          </a>
         </div>
         <div>
-          <h3>Audio - Phát Hành</h3>
+          <a href="/propagate/">
+            <h3>TUYÊN TRUYỀN LƯU ĐỘNG</h3>
+          </a>
+        </div>
+        <div>
+          <a href="/movies/">
+            <h3>CHIẾU PHIM LƯU ĐỘNG</h3>
+          </a>
         </div>
       </div>
       <div className="titleNews">

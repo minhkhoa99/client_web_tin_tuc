@@ -23,6 +23,7 @@ export default function Footer() {
             paddingLeft: "5px",
             marginRight: "auto",
             marginLeft: "auto",
+            paddingTop: "50px"
           }}
         >
           <table
@@ -236,7 +237,7 @@ thoại: 0251.3822038 - Fax: 0251.3824482`}</span>
                                                   '"times new roman", serif',
                                               }}
                                             >
-                                              Email:
+                                              Email: &nbsp;
                                               <span
                                                 style={{
                                                   boxSizing: "border-box",
@@ -244,17 +245,6 @@ thoại: 0251.3822038 - Fax: 0251.3824482`}</span>
                                                 }}
                                               />
                                             </span>
-                                            <a
-                                              href="mailto:bbtsvhttdldn@gmail.com"
-                                              style={{
-                                                boxSizing: "border-box",
-                                                backgroundColor: "transparent",
-                                                transition: "all 0.4s ease 0s",
-                                                textShadow: "none",
-                                                textDecoration: "none",
-                                                color: "rgb(255, 255, 255)",
-                                              }}
-                                            >
                                               <span
                                                 style={{
                                                   boxSizing: "border-box",
@@ -264,7 +254,6 @@ thoại: 0251.3822038 - Fax: 0251.3824482`}</span>
                                               >
                                                 bbtsvhttdldn@gmail.com
                                               </span>
-                                            </a>
                                             <span
                                               style={{
                                                 boxSizing: "border-box",

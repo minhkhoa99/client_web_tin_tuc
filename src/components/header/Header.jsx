@@ -346,7 +346,7 @@ export default function Header() {
                         }`}
                         id="navbarNav"
                       >
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav container-menu-nav-items ">
                           <li class="nav-item">
                             <a
                               class="nav-link active"
@@ -377,10 +377,10 @@ export default function Header() {
                             </a>
                           </li>
                           <NavDropdown title="Lưu động" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">
+                            <NavDropdown.Item href="/propagate" className="nav-dropdown mt-3 pb-2">
                               Tuyên truyền lưu động
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
+                            <NavDropdown.Item href="/movies" className="nav-dropdown mt-3">
                               Chiếu phim lưu động
                             </NavDropdown.Item>
                             

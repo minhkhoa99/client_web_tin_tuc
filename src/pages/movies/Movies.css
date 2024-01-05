@@ -11,6 +11,9 @@
 .conten-card{
     text-align: left;
 }
+.conten-card h4{
+    font-size: 20px;
+}
 .card-image{
     height: 200px;
 }

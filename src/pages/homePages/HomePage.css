@@ -37,7 +37,7 @@
     text-align: left;
 }
 .image-new-movies{
-    height: 200px;
+    height: 150px;
     border-radius: 100%;
     border: 10px solid rgb(46, 235, 28);
 }
@@ -49,6 +49,13 @@
     background-color: #F1F2F2;
     padding: 20px;
 
+}
+.movies button{
+    color: red;
+    border: none;
+}
+.card-item-menu{
+    align-items: center;
 }
 @media screen and (max-width: 768px) {
     .card-news{
