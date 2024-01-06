@@ -1,0 +1,15 @@
+.card-contact{
+    color: rgb(107, 106, 106);
+}
+
+.container-link h1{
+    color: rgb(107, 106, 106);
+
+}
+
+.container-link div{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid rgb(197, 195, 195);
+    border-top: 2px solid rgb(197, 195, 195);
+}
