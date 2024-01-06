@@ -38,7 +38,7 @@ const Footer = () => {
                   id="ctl00_g_e803a2bb_79d8_4279_880c_15c8682f4c5c"
                   style={{ boxSizing: "border-box" }}
                 >
-                  <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                  <nav className="navbar navbar-expand-lg bg-body-tertiary" id="nav-header">
                     <div className="container-fluid">
                       <button
                         className="navbar-toggler"

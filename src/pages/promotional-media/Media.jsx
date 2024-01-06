@@ -3,6 +3,7 @@ import axios from "axios";
 import imageContent from "../../image/THE THAO_jpg.jpg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 
 const Media = () => {
   const [data,setData] = useState([])
@@ -22,6 +23,7 @@ const Media = () => {
       <h2>
         TRUYỀN THÔNG  - <span>CỔ ĐỘNG</span>{" "}
       </h2>
+      <Navbar />
       {newMedia.map((items) => {
         return (
           <div className="row my-5 card-media pb-5" key={items.id}

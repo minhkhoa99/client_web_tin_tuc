@@ -3,6 +3,7 @@ import imageMovie from "../../image/z4042263610199_ac6e69bf6f323b5fcf7a9b2df33b7
 import "./public.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 const PublicArt = () => {
   const navigate = useNavigate()
   const [data,setData] = useState([])
@@ -19,6 +20,7 @@ const PublicArt = () => {
   return (
     <div>
       <h2 className="title my-5">NGHỆ THUẬT THUẦN CHÚNG</h2>
+      <Navbar />
       <div className="col-12">
         <video width="100%" height="100%" controls>
           <source

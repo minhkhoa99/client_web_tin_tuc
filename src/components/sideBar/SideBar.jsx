@@ -38,37 +38,37 @@ export default function SideBar() {
       <div className="menu my-5">
         <div>
           <a href="/">
-            <h3>TRANG CHỦ</h3>
+            <h5>TRANG CHỦ</h5>
           </a>
         </div>
         <div>
           <a href="/introduce">
-            <h3>GIỚI THIỆU CHUNG</h3>
+            <h5>GIỚI THIỆU CHUNG</h5>
           </a>
         </div>
         <div>
           <a href="/promotional-media">
-            <h3>TRUYỀN THÔNG CỔ ĐỘNG</h3>
+            <h5>TRUYỀN THÔNG CỔ ĐỘNG</h5>
           </a>
         </div>
         <div>
           <a href="/public-art">
-            <h3>NGHỆ THUẬT QUẦN CHÚNG</h3>
+            <h5>NGHỆ THUẬT QUẦN CHÚNG</h5>
           </a>
         </div>
         <div>
           <a href="/news">
-            <h3>TIN TỨC SỰ KIỆN</h3>
+            <h5>TIN TỨC SỰ KIỆN</h5>
           </a>
         </div>
         <div>
           <a href="/propagate/">
-            <h3>TUYÊN TRUYỀN LƯU ĐỘNG</h3>
+            <h5>TUYÊN TRUYỀN LƯU ĐỘNG</h5>
           </a>
         </div>
         <div>
           <a href="/movies/">
-            <h3>CHIẾU PHIM LƯU ĐỘNG</h3>
+            <h5>CHIẾU PHIM LƯU ĐỘNG</h5>
           </a>
         </div>
       </div>

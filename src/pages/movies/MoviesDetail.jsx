@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from './../../components/navbar/Navbar';
 
 const MoviesDetail = () => {
     const {id} = useParams()
@@ -12,6 +13,7 @@ const MoviesDetail = () => {
     }, [id])
     return(
         <div className='container-detail'>
+            <Navbar />
             <h3>{dataDetail?.title}</h3>
             <p>{dataDetail?.createdAt}</p>
             <p>{dataDetail?.content}</p>

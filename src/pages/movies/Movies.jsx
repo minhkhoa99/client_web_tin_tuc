@@ -3,6 +3,7 @@ import imageContent from "../../image/THE THAO_jpg.jpg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../../components/navbar/Navbar";
 
 const Movies = () => {
   const [dataNew, setDataNew] = useState([]);
@@ -13,7 +14,7 @@ const Movies = () => {
       .then((data) => setDataNew(data.data.data))
       .catch((err) => console.log(err));
   }, []);
-  const newsEvent = dataNew.filter((e) => e.CategoryId === 4)
+  const newsEvent = dataNew.filter((e) => e.category_id === 4)
 
   const handleClick = (id) => {
     navigate(`/news/${id}`);
@@ -24,6 +25,7 @@ const Movies = () => {
       <h2>
         CHIẾU PHIM - <span>LƯU ĐỘNG</span>{" "}
       </h2>
+      <Navbar />
       {newsEvent.map((items) => {
         return (
           <div className="row my-5 card-media pb-5" key={items.id}
