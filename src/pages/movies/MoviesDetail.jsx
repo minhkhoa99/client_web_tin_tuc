@@ -13,7 +13,6 @@ const MoviesDetail = () => {
     }, [id])
     return(
         <div className='container-detail'>
-            <Navbar />
             <h3>{dataDetail?.title}</h3>
             <p>{dataDetail?.createdAt}</p>
             <p>{dataDetail?.content}</p>

@@ -3,6 +3,7 @@ import "./sideBar.css";
 import image1 from "../../image/TAP SAN T8-2016_jpg.jpg";
 import image2 from "../../image/Du lich Dong nai_jpg.jpg";
 import image3 from "../../image/DuLichXuanLoc.jpg";
+import { Select } from "antd";
 
 export default function SideBar() {
   return (
@@ -85,6 +86,56 @@ export default function SideBar() {
       <img src={image2} alt="" className="w-100" />
 
       <img src={image3} alt="" className="w-100" />
+      <div className="card-title">
+        <h5 className="my-3">LIÊN KẾT TRANG WEB</h5>
+        <Select
+          showSearch
+          className="select w-100 mb-3"
+          placeholder="Search to Select"
+          optionFilterProp="children"
+          filterOption={(input, option) =>
+            (option?.label ?? "").includes(input)
+          }
+          filterSort={(optionA, optionB) =>
+            (optionA?.label ?? "")
+              .toLowerCase()
+              .localeCompare((optionB?.label ?? "").toLowerCase())
+          }
+          options={[
+            {
+              value: "1",
+              label: "Not Identified",
+            },
+            {
+              value: "2",
+              label: "Closed",
+            },
+            {
+              value: "3",
+              label: "Communicated",
+            },
+            {
+              value: "4",
+              label: "Identified",
+            },
+            {
+              value: "5",
+              label: "Resolved",
+            },
+            {
+              value: "6",
+              label: "Cancelled",
+            },
+          ]}
+        />
+        <div className="statistical py-3 mb-3">
+          <h6>THÔNG KÊ LƯỢT TRUY CẬP</h6>
+        </div>
+        <p>Hôm nay: 898</p>
+        <p>Hôm qua: 2,898</p>
+        <p>Tất cả: 3,7884,898</p>
+
+      </div>
     </div>
   );
 }

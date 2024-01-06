@@ -16,12 +16,14 @@ import Propagate from "./pages/propagate/Propagate";
 import PropagateDetail from "./pages/propagate/PropagateDetail";
 import Movies from "./pages/movies/Movies";
 import MoviesDetail from "./pages/movies/MoviesDetail";
+import SileDer from "./components/sileder/SileDer";
 function App() {
   return (
     <div className="App">
       <Headers />
       <div className="container">
         <div className="row">
+         <SileDer />
           <div className="col-9">
             <BrowserRouter>
               <Routes>

@@ -26,7 +26,6 @@ const Propagate = () => {
       <h2>
         TUYÊN TRUYỀN - <span>LƯU ĐỘNG</span>{" "}
       </h2>
-      <Navbar />
       {newsEvent.map((items) => {
         return (
           <div className="row my-5 card-media pb-5" key={items.id}

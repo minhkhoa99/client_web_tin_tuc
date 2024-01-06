@@ -1,5 +1,5 @@
 .titleNews{
-    background-color: red;
+    background-color: #B70C13;
     padding: 15px;
     color: white;
     text-align: center;
@@ -23,3 +23,20 @@
     color: white;
     text-decoration: none;
   }
+  .statistical{
+    color: white;
+    background-color: #B70C13;
+    text-align: center;
+  }
+  .card-title{
+    color: rgb(147, 146, 146);
+    text-align: center;
+  }
+  .card-title p{
+    color: blue;
+    text-align: left;
+    padding-bottom: 2%;
+    font-weight: 500;
+    border-bottom: 2px solid rgb(193, 191, 191);
+  }
+  

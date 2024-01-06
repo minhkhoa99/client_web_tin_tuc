@@ -20,7 +20,6 @@ const PublicArt = () => {
   return (
     <div>
       <h2 className="title my-5">NGHỆ THUẬT THUẦN CHÚNG</h2>
-      <Navbar />
       <div className="col-12">
         <video width="100%" height="100%" controls>
           <source
