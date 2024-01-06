@@ -54,7 +54,7 @@ const Footer = () => {
                         }`}
                         id="navbarNav"
                       >
-                        <ul class="navbar-nav container-menu-nav-items ">
+                        <ul class="navbar-nav container-menu-nav-items m-auto">
                           <li class="nav-item">
                             <a
                               class="nav-link active"

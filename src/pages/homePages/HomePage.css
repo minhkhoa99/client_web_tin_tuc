@@ -1,5 +1,5 @@
 .divNewsTitle h2{
-    color: red;
+    color: #6f080b;
     font-weight: 700;
     font-size: 25px;
 }
@@ -20,7 +20,7 @@
     text-align: left;
 }
 .card-news button{
-    color: red;
+    color: #6f080b;
     border: none;
 }
 .propagate{
@@ -51,7 +51,7 @@
 
 }
 .movies button{
-    color: red;
+    color: #6f080b;
     border: none;
 }
 .card-item-menu{

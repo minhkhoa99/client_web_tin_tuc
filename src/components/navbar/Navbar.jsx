@@ -51,33 +51,33 @@ const Navbar = () => {
                       }`}
                       id="navbarNav"
                     >
-                      <ul class="navbar-nav container-menu-nav-items ">
-                        <li class="nav-item">
+                      <ul className="navbar-nav container-menu-nav-items m-auto">
+                        <li className="nav-item">
                           <a
-                            class="nav-link active"
+                            className="nav-link active"
                             aria-current="page"
                             href="/"
                           >
                             Trang Chủ
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" href="/introduce">
+                        <li className="nav-item">
+                          <a className="nav-link active" href="/introduce">
                             Giới Thiệu Chung
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" href="/promotional-media">
+                        <li className="nav-item">
+                          <a className="nav-link active" href="/promotional-media">
                             Truyền thông cổ động
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" href="/public-art">
+                        <li className="nav-item">
+                          <a className="nav-link active" href="/public-art">
                             Nghệ thuật quần chúng
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" href="/news">
+                        <li className="nav-item">
+                          <a className="nav-link active" href="/news">
                             Tin Tức Sự Kiện
                           </a>
                         </li>

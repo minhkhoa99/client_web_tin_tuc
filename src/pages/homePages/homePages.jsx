@@ -34,7 +34,6 @@ console.log(data);
 
   return (
     <div className="my-5 row">
-      <SileDer/>
       <div className="home-page">
         <div className="divNewsTitle">
           <h2 className="mt-5 mb-5">

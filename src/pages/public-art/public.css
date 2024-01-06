@@ -8,7 +8,7 @@
     font-size: 15px;
 }
 .title{
-    color: red;
+    color: #6f080b;
     text-align: center;
     font-size: 25px;
     font-weight: 600;
@@ -16,6 +16,6 @@
 .see-more-title{
     font-size: 20px;
     font-weight: 600;
-    color: red;
+    color: #6f080b;
     margin-left: 1%;
 }
