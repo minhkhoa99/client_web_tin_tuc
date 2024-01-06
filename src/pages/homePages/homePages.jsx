@@ -34,8 +34,8 @@ console.log(data);
 
   return (
     <div className="my-5 row">
+      <SileDer/>
       <div className="home-page">
-        <SileDer/>
         <div className="divNewsTitle">
           <h2 className="mt-5 mb-5">
             TIN TỨC - <span>SỰ KIỆN</span>

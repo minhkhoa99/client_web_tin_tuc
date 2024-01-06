@@ -26,7 +26,6 @@ const News = () => {
       <h2>
         TIN TỨC - <span>SỰ KIỆN</span>{" "}
       </h2>
-      <Navbar />
       {newsEvent.map((items) => {
         return (
           <div className="row my-5 card-media pb-5" key={items.id}

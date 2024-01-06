@@ -23,7 +23,6 @@ const Media = () => {
       <h2>
         TRUYỀN THÔNG  - <span>CỔ ĐỘNG</span>{" "}
       </h2>
-      <Navbar />
       {newMedia.map((items) => {
         return (
           <div className="row my-5 card-media pb-5" key={items.id}

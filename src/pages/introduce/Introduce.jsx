@@ -274,7 +274,6 @@ LỊCH ĐỒNG​ NAI`}</span>
                     />
                   </b>
                 </div>
-                <Navbar />
                 <div style={{ boxSizing: "border-box" }}>
                   <span style={{ boxSizing: "border-box", fontSize: "16px" }} />
                 </div>
