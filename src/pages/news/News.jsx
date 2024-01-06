@@ -3,6 +3,7 @@ import imageContent from "../../image/THE THAO_jpg.jpg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../../components/navbar/Navbar";
 
 const News = () => {
   const [dataNew, setDataNew] = useState([]);
@@ -25,6 +26,7 @@ const News = () => {
       <h2>
         TIN TỨC - <span>SỰ KIỆN</span>{" "}
       </h2>
+      <Navbar />
       {newsEvent.map((items) => {
         return (
           <div className="row my-5 card-media pb-5" key={items.id}

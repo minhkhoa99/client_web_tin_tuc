@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function Introduce() {
   return (
@@ -273,6 +274,7 @@ LỊCH ĐỒNG​ NAI`}</span>
                     />
                   </b>
                 </div>
+                <Navbar />
                 <div style={{ boxSizing: "border-box" }}>
                   <span style={{ boxSizing: "border-box", fontSize: "16px" }} />
                 </div>
