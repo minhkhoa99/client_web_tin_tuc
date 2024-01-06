@@ -3,6 +3,8 @@ import image from "../../image/z4042263610199_ac6e69bf6f323b5fcf7a9b2df33b74de.j
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import SileDer from "../../components/sileder/SileDer";
+import Contact from "../../components/contact/Contact";
 
 const HomePage = () => {
   const [data, setData] = useState([]);
@@ -14,16 +16,17 @@ const HomePage = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const newsEvent = data.filter((e) => e.CategoryId === 1);
+  const newsEvent = data.filter((e) => e.category_id === 1);
   const newEventData = newsEvent.slice(0, 4);
-  const media = data.filter((e) => e.CategoryId === 2);
+  const media = data.filter((e) => e.category_id === 2);
   const newMedia = media.slice(0, 4);
-  const movies = data.filter((e) => e.CategoryId === 4);
+  const movies = data.filter((e) => e.category_id === 4);
   const newMovies = movies.slice(0, 4);
-  const propagate = data.filter((e) => e.CategoryId === 3);
+  const propagate = data.filter((e) => e.category_id === 3);
   const newPropagate = propagate.slice(0, 4);
-  const dataPublic = data.filter((e) => e.CategoryId === 5);
+  const dataPublic = data.filter((e) => e.category_id === 5);
   const newPublic = dataPublic.slice(0, 4);
+console.log(data);
 
   const handleClick = (id) => {
     navigate(`/news/${id}`);
@@ -32,6 +35,7 @@ const HomePage = () => {
   return (
     <div className="my-5 row">
       <div className="home-page">
+        <SileDer/>
         <div className="divNewsTitle">
           <h2 className="mt-5 mb-5">
             TIN TỨC - <span>SỰ KIỆN</span>
@@ -56,7 +60,7 @@ const HomePage = () => {
                   }}>
                     <img className="w-100 image-new" src={image} alt="" />
                     <h3 className="text-truncate">{e.title}</h3>
-                    <p className="text-truncate">{e.shortTitle}</p>
+                    <p className="text-truncate">{e.short_title}</p>
                     <button>Đọc thêm</button>
                   </div>
                 );
@@ -86,9 +90,9 @@ const HomePage = () => {
                   onClick={() => {
                     handleClick(e.id);
                   }}>
-                    <img className="w-100 image-new" src={image} alt="" />
+                    <img className="w-100" src={image} alt="" />
                     <h3 className="text-truncate">{e.title}</h3>
-                    <p className="text-truncate">{e.shortTitle}</p>
+                    <p className="text-truncate">{e.short_title}</p>
                     <button>Đọc thêm</button>
                   </div>
                 );
@@ -155,9 +159,9 @@ const HomePage = () => {
                   onClick={() => {
                     handleClick(e.id);
                   }}>
-                    <img className="w-100 image-new" src={image} alt="" />
+                    <img className="w-100" src={image} alt="" />
                     <h3 className="text-truncate">{e.title}</h3>
-                    <p className="text-truncate">{e.shortTitle}</p>
+                    <p className="text-truncate">{e.short_title}</p>
                     <button>Đọc thêm</button>
                   </div>
                 );
@@ -190,7 +194,7 @@ const HomePage = () => {
                     <img className="image-new-movies" src={image} alt="" />
                     <div>
                       <h3 className="text-truncate">{e.title}</h3>
-                      <p className="text-truncate">{e.shortTitle}</p>
+                      <p className="text-truncate">{e.short_title}</p>
                       <button>Đọc thêm</button>
                     </div>
                   </div>
@@ -199,6 +203,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+        <Contact/>
       </div>
     </div>
   );

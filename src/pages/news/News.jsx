@@ -14,7 +14,7 @@ const News = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const newsEvent = dataNew.filter((e) => e.CategoryId === 1)
+  const newsEvent = dataNew.filter((e) => e.category_id === 1)
 
   const handleClick = (id) => {
     navigate(`/news/${id}`);
@@ -37,7 +37,7 @@ const News = () => {
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
-              <p>{items.shortTitle}</p>
+              <p>{items.short_title}</p>
               <button
                 
               >

@@ -36,7 +36,7 @@ const Movies = () => {
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
-              <p>{items.shortTitle}</p>
+              <p>{items.short_title}</p>
               <button
                
               >

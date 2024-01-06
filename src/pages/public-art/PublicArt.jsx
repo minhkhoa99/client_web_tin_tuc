@@ -12,7 +12,7 @@ const PublicArt = () => {
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);
-  const newsEvent = data.filter((e) => e.CategoryId === 5)
+  const newsEvent = data.filter((e) => e.category_id === 5)
   const handleClick = (id) => {
     navigate(`/public-art/${id}`);
   };
@@ -42,7 +42,7 @@ const PublicArt = () => {
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
-              <p>{items.shortTitle}</p>
+              <p>{items.short_title}</p>
               <button
                 
               >

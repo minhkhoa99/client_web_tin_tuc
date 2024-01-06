@@ -12,7 +12,7 @@ const Media = () => {
     .then((data) => setData(data.data.data))
     .catch((err) => console.log(err))
   },[])
-  const newMedia = data.filter((e) => e.CategoryId === 2)
+  const newMedia = data.filter((e) => e.category_id === 2)
   const handleClick = (id) => {
     navigate(`/promotional-media/${id}`);
   };
@@ -34,7 +34,7 @@ const Media = () => {
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
-              <p>{items.shortTitle}</p>
+              <p>{items.short_title}</p>
               <button
                
               >

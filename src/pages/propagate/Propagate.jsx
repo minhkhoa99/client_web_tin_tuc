@@ -14,7 +14,7 @@ const Propagate = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const newsEvent = dataNew.filter((e) => e.CategoryId === 3)
+  const newsEvent = dataNew.filter((e) => e.category_id === 3)
 
   const handleClick = (id) => {
     navigate(`/news/${id}`);
@@ -37,7 +37,7 @@ const Propagate = () => {
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
-              <p>{items.shortTitle}</p>
+              <p>{items.short_title}</p>
               <button
                 
               >
