@@ -1,42 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./sideBar.css";
 import image1 from "../../image/TAP SAN T8-2016_jpg.jpg";
 import image2 from "../../image/Du lich Dong nai_jpg.jpg";
 import image3 from "../../image/DuLichXuanLoc.jpg";
 import { Select } from "antd";
+import axios from "axios";
 
 export default function SideBar() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/new/host-new/1")
+      .then((data) => setData(data.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+  console.log(data);
   return (
     <div className="sideBar">
-      <div className="titleNews p-1">
+      <div className="titleNews p-1 mb-3">
         <h4>Tin Nổi Bật</h4>
       </div>
-      <p className="my-3">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, qui!
-      </p>
-
-      <ul style={{ overflowY: 'scroll', height: '400px' }}>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro
-          quibusdam accusantium dolor tenetur perferendis magni laborum quisquam
-          ea libero.
-        </li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro
-          quibusdam accusantium dolor tenetur perferendis magni laborum quisquam
-          ea libero.
-        </li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro
-          quibusdam accusantium dolor tenetur perferendis magni laborum quisquam
-          ea libero.
-        </li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro
-          quibusdam accusantium dolor tenetur perferendis magni laborum quisquam
-          ea libero.
-        </li>
+      <ul style={{ overflowY: "scroll", height: "400px" }}>
+        {data.map((e) => {
+          return <li key={e.id}>{e.title}</li>;
+        })}
       </ul>
+
       {/* <div className="p-1 text-center">
         <h4 className="title-video mb-4">Video</h4>
         <video controls width="500">
