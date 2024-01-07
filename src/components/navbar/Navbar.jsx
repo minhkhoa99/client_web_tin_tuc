@@ -52,36 +52,36 @@ const Navbar = () => {
                       id="navbarNav"
                     >
                       <ul className="navbar-nav container-menu-nav-items m-auto">
-                        <li className="nav-item">
+                        <li className="nav-item mx-2">
                           <a
-                            className="nav-link active"
+                            className="nav-link active p-0"
                             aria-current="page"
                             href="/"
                           >
                             Trang Chủ
                           </a>
                         </li>
-                        <li className="nav-item">
-                          <a className="nav-link active" href="/introduce">
+                        <li className="nav-item mx-2">
+                          <a className="nav-link active p-0" href="/introduce">
                             Giới Thiệu Chung
                           </a>
                         </li>
-                        <li className="nav-item">
-                          <a className="nav-link active" href="/promotional-media">
+                        <li className="nav-item mx-2">
+                          <a className="nav-link active p-0" href="/promotional-media">
                             Truyền thông cổ động
                           </a>
                         </li>
-                        <li className="nav-item">
-                          <a className="nav-link active" href="/public-art">
+                        <li className="nav-item mx-2">
+                          <a className="nav-link active p-0" href="/public-art">
                             Nghệ thuật quần chúng
                           </a>
                         </li>
-                        <li className="nav-item">
-                          <a className="nav-link active" href="/news">
+                        <li className="nav-item mx-2">
+                          <a className="nav-link active p-0" href="/news">
                             Tin Tức Sự Kiện
                           </a>
                         </li>
-                        <NavDropdown title="Lưu động" id="basic-nav-dropdown">
+                        <NavDropdown title="Lưu động" id="basic-nav-dropdown" className="p-0 mx-2">
                           <NavDropdown.Item href="/propagate" className="nav-dropdown mt-3 pb-2">
                             Tuyên truyền lưu động
                           </NavDropdown.Item>

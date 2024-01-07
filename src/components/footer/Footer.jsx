@@ -55,7 +55,7 @@ const Footer = () => {
                         id="navbarNav"
                       >
                         <ul class="navbar-nav container-menu-nav-items m-auto">
-                          <li class="nav-item">
+                          <li class="nav-item mx-3">
                             <a
                               class="nav-link active"
                               aria-current="page"
@@ -64,22 +64,22 @@ const Footer = () => {
                               Trang Chủ
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li class="nav-item mx-3">
                             <a class="nav-link active" href="/introduce">
                               Giới Thiệu Chung
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li class="nav-item mx-3">
                             <a class="nav-link active" href="/promotional-media">
                               Truyền thông cổ động
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li class="nav-item mx-3">
                             <a class="nav-link active" href="/public-art">
                               Nghệ thuật quần chúng
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li class="nav-item mx-3">
                             <a class="nav-link active" href="/news">
                               Tin Tức Sự Kiện
                             </a>

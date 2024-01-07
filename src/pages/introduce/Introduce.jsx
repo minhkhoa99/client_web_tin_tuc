@@ -60,7 +60,7 @@ export default function Introduce() {
                       style={{
                         boxSizing: "border-box",
                         fontFamily: "arial, sans-serif",
-                        color: "red",
+                        color: "#B1292B",
                       }}
                     >
                       <br style={{ boxSizing: "border-box" }} />
@@ -79,7 +79,7 @@ export default function Introduce() {
                       style={{
                         boxSizing: "border-box",
                         fontFamily: "arial, sans-serif",
-                        color: "red",
+                        color: "#B1292B",
                       }}
                     >{`SỞ VĂN HÓA, THỂ THAO VÀ DU
 LỊCH ĐỒNG​ NAI`}</span>
@@ -269,7 +269,7 @@ LỊCH ĐỒNG​ NAI`}</span>
                       style={{
                         boxSizing: "border-box",
                         fontFamily: "arial, sans-serif",
-                        color: "red",
+                        color: "#B1292B",
                       }}
                     />
                   </b>
@@ -306,7 +306,7 @@ LỊCH ĐỒNG​ NAI`}</span>
                     style={{
                       boxSizing: "border-box",
                       fontFamily: "arial, sans-serif",
-                      color: "red",
+                      color: "#B1292B",
                     }}
                   />
                 </p>

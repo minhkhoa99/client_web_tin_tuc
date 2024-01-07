@@ -1,6 +1,5 @@
 .titleNews{
-    background-color: #B70C13;
-    padding: 15px;
+    background-color: #B1292B;
     color: white;
     text-align: center;
 }
@@ -25,7 +24,7 @@
   }
   .statistical{
     color: white;
-    background-color: #B70C13;
+    background-color: #B1292B;
     text-align: center;
   }
   .card-title{
@@ -39,4 +38,12 @@
     font-weight: 500;
     border-bottom: 2px solid rgb(193, 191, 191);
   }
-  
+  .titleNews h4{
+    margin-bottom: 0px !important;
+  }
+  .titleNews h6{
+    margin-bottom: 0px !important;
+  }
+  .title-video{
+    color: #225AB2;
+  }

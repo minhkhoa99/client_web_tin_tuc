@@ -21,7 +21,6 @@ function App() {
   return (
     <div className="App">
       <Headers />
-      <div className="container">
         <div className="row">
          <SileDer />
           <div className="col-9">
@@ -45,7 +44,7 @@ function App() {
           <div className="col-3">
             <SideBar/>
           </div>
-        </div>
+        {/* </div> */}
       </div>
 
       <Footer />
