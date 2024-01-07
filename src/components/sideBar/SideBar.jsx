@@ -14,7 +14,6 @@ export default function SideBar() {
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(data);
   return (
     <div className="sideBar">
       <div className="titleNews p-1 mb-3">

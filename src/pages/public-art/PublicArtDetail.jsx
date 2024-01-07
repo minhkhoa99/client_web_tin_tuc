@@ -11,11 +11,15 @@ const PublicArtDetail = () => {
         .then((data) => setDataDetail(data.data.data))
         .catch((err) => console.log(err))
     }, [id])
+
+    const htmlString = dataDetail?.content
+
     return(
         <div className='container-detail mx-3'>
             <h3>{dataDetail?.title}</h3>
             <p>{dataDetail?.createdAt}</p>
-            <p>{dataDetail?.content}</p>
+            <div dangerouslySetInnerHTML={{ __html: htmlString }} />
+
         </div>
     )
 }
