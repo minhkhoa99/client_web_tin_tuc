@@ -50,7 +50,6 @@ const HomePage = () => {
           <div className="container">
             <div className="row carde-position">
               {newEventData.map((e) => {
-                console.log(e);
                 return (
                   <div
                     className="col-2 h-100 news-events card-news"
