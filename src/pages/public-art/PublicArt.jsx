@@ -19,7 +19,7 @@ const PublicArt = () => {
   };
   return (
     <div>
-      <h2 className="title my-5">NGHỆ THUẬT THUẦN CHÚNG</h2>
+      <h2 className="title mb-5">NGHỆ THUẬT THUẦN CHÚNG</h2>
       <div className="col-12">
         <video width="100%" height="100%" controls>
           <source
@@ -33,7 +33,7 @@ const PublicArt = () => {
         <h3 className=" mt-5 see-more-title">Xem thêm</h3>
         {newsEvent.map((items) => {
         return (
-          <div className="row my-5 card-media pb-5" key={items.id}
+          <div className="row my-5 card-media pb-5 mx-3" key={items.id}
           onClick={() => {
             handleClick(items.id);
           }}>

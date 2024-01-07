@@ -12,9 +12,9 @@ const SileDer = () => {
 
   return (
     <div className="text-center container-sileder">
-      <h1>TRUNG TÂM VĂN HÓA - ĐIỆN ẢNH ĐỒNG NAI</h1>
+      <h2>TRUNG TÂM VĂN HÓA - ĐIỆN ẢNH ĐỒNG NAI</h2>
       <Navbar />
-      <div className="my-5">
+      <div className="my-3">
         <Carousel autoplay>
           <div>
             <img src={img1} className="w-100" alt="" />

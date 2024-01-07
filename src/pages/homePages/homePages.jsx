@@ -8,7 +8,7 @@ import Contact from "../../components/contact/Contact";
 
 const HomePage = () => {
   const [data, setData] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get("http://localhost:8000/new/")
@@ -17,7 +17,7 @@ const HomePage = () => {
   }, []);
 
   const newsEvent = data.filter((e) => e.category_id === 1);
-  const newEventData = newsEvent.slice(0, 4);
+  const newEventData = newsEvent.slice(0, 5);
   const media = data.filter((e) => e.category_id === 2);
   const newMedia = media.slice(0, 4);
   const movies = data.filter((e) => e.category_id === 4);
@@ -26,21 +26,18 @@ const HomePage = () => {
   const newPropagate = propagate.slice(0, 4);
   const dataPublic = data.filter((e) => e.category_id === 5);
   const newPublic = dataPublic.slice(0, 4);
-console.log(data);
-
   const handleClick = (id) => {
     navigate(`/news/${id}`);
   };
 
   return (
-    <div className="my-5 row">
-      <SileDer/>
+    <div className="row">
       <div className="home-page">
-        <div className="divNewsTitle">
-          <h2 className="mt-5 mb-5">
+        <div className="divNewsTitle mx-5">
+          <h2 className="mb-3">
             TIN TỨC - <span>SỰ KIỆN</span>
           </h2>
-          <div className="d-flex justify-content-between mb-5">
+          <div className="d-flex justify-content-between text-card mb-2">
             <p>
               Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
               bản
@@ -51,28 +48,42 @@ console.log(data);
             </p>
           </div>
           <div className="container">
-            <div className="row">
+            <div className="row carde-position">
               {newEventData.map((e) => {
+                console.log(e);
                 return (
-                  <div className="col-3 card-news" key={e.id}
-                  onClick={() => {
-                    handleClick(e.id);
-                  }}>
-                    <img className="w-100 image-new" src={image} alt="" />
-                    <h3 className="text-truncate">{e.title}</h3>
-                    <p className="text-truncate">{e.short_title}</p>
-                    <button>Đọc thêm</button>
+                  <div
+                    className="col-2 h-100 news-events card-news"
+                    key={e.id}
+                    onClick={() => {
+                      handleClick(e.id);
+                    }}
+                  >
+                      <img
+                        className="card-img-top image-new"
+                        src={image}
+                        alt=""
+                      />
+
+                    <div className="card-body">
+                      <h6 className="card-body-title">{e.title}</h6>
+                      <p>{e.createdAt}</p>
+                      <p className="card-body-short_title">{e.short_title}</p>
+                      <div>
+                      <button className="btn-detail">Đọc thêm</button>
+                      </div>
+                    </div>
                   </div>
                 );
               })}
             </div>
           </div>
         </div>
-        <div className="divNewsTitle my-5">
-          <h2 className="mt-5 mb-5">
+        <div className="divNewsTitle card-news-one mx-5">
+          <h2 className="my-3">
             TUYÊN TRUYỀN CỔ ĐỘNG - <span>TRIỂN LÃM</span>
           </h2>
-          <div className="d-flex justify-content-between mb-5">
+          <div className="d-flex justify-content-between text-card mb-5">
             <p>
               Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
               bản
@@ -86,13 +97,16 @@ console.log(data);
             <div className="row">
               {newMedia.map((e) => {
                 return (
-                  <div className="col-3 card-news" key={e.id}
-                  onClick={() => {
-                    handleClick(e.id);
-                  }}>
+                  <div
+                    className="col-2 exhibition card-news"
+                    key={e.id}
+                    onClick={() => {
+                      handleClick(e.id);
+                    }}
+                  >
                     <img className="w-100" src={image} alt="" />
-                    <h3 className="text-truncate">{e.title}</h3>
-                    <p className="text-truncate">{e.short_title}</p>
+                    <h6 className="card-body-title">{e.title}</h6>
+                      <p className="card-body-short_title">{e.short_title}</p>
                     <button>Đọc thêm</button>
                   </div>
                 );
@@ -100,9 +114,9 @@ console.log(data);
             </div>
           </div>
         </div>
-        <div className="propagate">
-          <h2 className="my-4">NGHỆ THUẬT QUẦN CHÚNG</h2>
-          <div className="d-flex justify-content-between mb-5">
+        <div className="propagate py-3">
+          <h3 className="my-2">NGHỆ THUẬT QUẦN CHÚNG</h3>
+          <div className="d-flex justify-content-between text-card mb-2">
             <p>
               Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
               bản
@@ -125,23 +139,26 @@ console.log(data);
             <div className="col-5 cardMenu">
               {newPublic.map((e) => {
                 return (
-                  <div className="d-flex card-item-menu my-3" key={e.id}
-                  onClick={() => {
-                    handleClick(e.id);
-                  }}>
-                    <img src={image} alt="" className="w-25 mx-3" />
-                    <h3 className="text-truncate">{e.title}</h3>
+                  <div
+                    className="d-flex card-item-menu my-3"
+                    key={e.id}
+                    onClick={() => {
+                      handleClick(e.id);
+                    }}
+                  >
+                    <img src={image} alt="" className="w-25 h-100 me-2" />
+                    <h6 className="card-body-title">{e.title}</h6>
                   </div>
                 );
               })}
             </div>
           </div>
         </div>
-        <div className="divNewsTitle my-5">
-          <h2 className="mt-5 mb-5">
+        <div className="divNewsTitle my-3 mx-5">
+          <h2 className="my-3">
             TUYÊN TRUYỀN - <span>LƯU ĐỘNG</span>
           </h2>
-          <div className="d-flex justify-content-between mb-5">
+          <div className="d-flex justify-content-between text-card mb-5">
             <p>
               Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
               bản
@@ -155,13 +172,16 @@ console.log(data);
             <div className="row">
               {newPropagate.map((e) => {
                 return (
-                  <div className="col-3 card-news" key={e.id}
-                  onClick={() => {
-                    handleClick(e.id);
-                  }}>
+                  <div
+                    className="col-3 card-news"
+                    key={e.id}
+                    onClick={() => {
+                      handleClick(e.id);
+                    }}
+                  >
                     <img className="w-100" src={image} alt="" />
-                    <h3 className="text-truncate">{e.title}</h3>
-                    <p className="text-truncate">{e.short_title}</p>
+                    <h6 className="card-body-title">{e.title}</h6>
+                      <p className="card-body-short_title">{e.short_title}</p>
                     <button>Đọc thêm</button>
                   </div>
                 );
@@ -170,10 +190,10 @@ console.log(data);
           </div>
         </div>
         <div className="divNewsTitle divMovies">
-          <h2 className="mt-5 mb-5">
+          <h2 className="my-3">
             CHIẾU PHIM - <span>LƯU ĐỘNG</span>
           </h2>
-          <div className="d-flex justify-content-between mb-5">
+          <div className="d-flex justify-content-between text-card mb-5">
             <p>
               Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
               bản
@@ -187,15 +207,26 @@ console.log(data);
             <div className="row">
               {newMovies.map((e) => {
                 return (
-                  <div className="col-6 movies divMovies" key={e.id}
-                  onClick={() => {
-                    handleClick(e.id);
-                  }}>
-                    <img className="image-new-movies" src={image} alt="" />
-                    <div>
-                      <h3 className="text-truncate">{e.title}</h3>
-                      <p className="text-truncate">{e.short_title}</p>
-                      <button>Đọc thêm</button>
+                  <div
+                    className="col-6 movies divMovies card-movies"
+                    key={e.id}
+                    onClick={() => {
+                      handleClick(e.id);
+                    }}
+                  >
+                    <div className="row">
+                      <div className="col-5">
+                        <img
+                          className="image-new-movies w-100 h-100"
+                          src={image}
+                          alt=""
+                        />
+                      </div>
+                      <div className="col-7">
+                      <h6 className="card-body-title">{e.title}</h6>
+                      <p className="card-body-short_title">{e.short_title}</p>
+                        <button className="btn-show-detail">Đọc thêm</button>
+                      </div>
                     </div>
                   </div>
                 );
@@ -203,7 +234,7 @@ console.log(data);
             </div>
           </div>
         </div>
-        <Contact/>
+        <Contact />
       </div>
     </div>
   );

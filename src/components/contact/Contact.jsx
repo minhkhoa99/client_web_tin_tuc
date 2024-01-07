@@ -14,9 +14,9 @@ import image2 from "../../image/BAO TANG.jpg"
 const Contact = () => {
     return(
         <div>
-            <div className="container-link my-5">
-                <h1 className="text-center">LIÊN KẾT WEBSITE</h1>
-                <div className="py-5 my-5 row">
+            <div className="container-link">
+                <h3 className="text-center my-3">LIÊN KẾT WEBSITE</h3>
+                <div className="py-5 row">
                     <div className="col-1">
                     <img src={image1} className="w-100" alt="" />
 
@@ -52,8 +52,8 @@ const Contact = () => {
 
                 </div>
             </div>
-             <div className="text-center card-contact my-5">
-            <h1>LIÊN HỆ CHÚNG TÔI</h1>
+             <div className="text-center card-contact my-3">
+            <h3>LIÊN HỆ CHÚNG TÔI</h3>
             <p>số 100, sa lộ Hà nội, Phường Tân Biên, Thành Phố Biên Hòa, Tỉnh Đồng Nai</p>
             <p>sđt: (02513) 881 196, email: trungtamvanhoadongnai@gmail.com</p>
             <img src={image} className="w-100" alt="" />

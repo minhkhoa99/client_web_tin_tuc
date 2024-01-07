@@ -7,14 +7,15 @@ import { Select } from "antd";
 
 export default function SideBar() {
   return (
-    <div className="my-5 sideBar">
-      <div className="titleNews">
-        <h2>Tin Nổi Bật</h2>
+    <div className="sideBar">
+      <div className="titleNews p-1">
+        <h4>Tin Nổi Bật</h4>
       </div>
       <p className="my-3">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, qui!
       </p>
-      <ul>
+
+      <ul style={{ overflowY: 'scroll', height: '400px' }}>
         <li>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro
           quibusdam accusantium dolor tenetur perferendis magni laborum quisquam
@@ -36,47 +37,60 @@ export default function SideBar() {
           ea libero.
         </li>
       </ul>
-      <div className="menu my-5">
+      {/* <div className="p-1 text-center">
+        <h4 className="title-video mb-4">Video</h4>
+        <video controls width="500">
+          <source
+            src="https://youtu.be/lfkqJOuHN14?si=VuKGiPBGj6n3Ddum"
+            type="video/*"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <div className="titleNews p-2">
+          <h6>AUDIO PHAT THANH TUYÊN TRUYỀN</h6>
+        </div>
+      </div> */}
+      <div className="menu my-3">
         <div>
           <a href="/">
-            <h5>TRANG CHỦ</h5>
+            <h6>TRANG CHỦ</h6>
           </a>
         </div>
         <div>
           <a href="/introduce">
-            <h5>GIỚI THIỆU CHUNG</h5>
+            <h6>GIỚI THIỆU CHUNG</h6>
           </a>
         </div>
         <div>
           <a href="/promotional-media">
-            <h5>TRUYỀN THÔNG CỔ ĐỘNG</h5>
+            <h6>TRUYỀN THÔNG CỔ ĐỘNG</h6>
           </a>
         </div>
         <div>
           <a href="/public-art">
-            <h5>NGHỆ THUẬT QUẦN CHÚNG</h5>
+            <h6>NGHỆ THUẬT QUẦN CHÚNG</h6>
           </a>
         </div>
         <div>
           <a href="/news">
-            <h5>TIN TỨC SỰ KIỆN</h5>
+            <h6>TIN TỨC SỰ KIỆN</h6>
           </a>
         </div>
         <div>
           <a href="/propagate/">
-            <h5>TUYÊN TRUYỀN LƯU ĐỘNG</h5>
+            <h6>TUYÊN TRUYỀN LƯU ĐỘNG</h6>
           </a>
         </div>
         <div>
           <a href="/movies/">
-            <h5>CHIẾU PHIM LƯU ĐỘNG</h5>
+            <h6>CHIẾU PHIM LƯU ĐỘNG</h6>
           </a>
         </div>
       </div>
-      <div className="titleNews">
-        <h2>Văn Bản</h2>
+      <div className="titleNews p-1">
+        <h4>Văn Bản</h4>
       </div>
-      <h4 className="mt-5">205/KH-TTVH </h4>
+      <h4 className="mt-3">205/KH-TTVH </h4>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum beatae
         dolores nam voluptatibus repudiandae labore commodi autem eveniet
@@ -128,13 +142,12 @@ export default function SideBar() {
             },
           ]}
         />
-        <div className="statistical py-3 mb-3">
-          <h6>THÔNG KÊ LƯỢT TRUY CẬP</h6>
+        <div className="statistical py-2 mb-3">
+          <h6 className="m-0">THÔNG KÊ LƯỢT TRUY CẬP</h6>
         </div>
         <p>Hôm nay: 898</p>
         <p>Hôm qua: 2,898</p>
         <p>Tất cả: 3,7884,898</p>
-
       </div>
     </div>
   );

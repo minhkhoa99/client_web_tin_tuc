@@ -12,7 +12,7 @@ const PublicArtDetail = () => {
         .catch((err) => console.log(err))
     }, [id])
     return(
-        <div className='container-detail'>
+        <div className='container-detail mx-3'>
             <h3>{dataDetail?.title}</h3>
             <p>{dataDetail?.createdAt}</p>
             <p>{dataDetail?.content}</p>

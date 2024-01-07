@@ -8,7 +8,7 @@ import "./Header.css"
 
 const Header = () => {
   return (
-    <div className="d-flex container-header py-4 mb-5">
+    <div className="d-flex container-header py-2 mb-3">
       <div>
         <PhoneOutlined />
         <span>(02513) 881196</span>

@@ -28,7 +28,7 @@ const News = () => {
       </h2>
       {newsEvent.map((items) => {
         return (
-          <div className="row my-5 card-media pb-5" key={items.id}
+          <div className="row my-5 card-media pb-5 mx-3" key={items.id}
           onClick={() => {
             handleClick(items.id);
           }} >
