@@ -10,7 +10,7 @@ const News = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8000/new/")
+      .get(`${process.env.REACT_APP_API}/new/`)
       .then((data) => setDataNew(data.data.data))
       .catch((err) => console.log(err));
   }, []);

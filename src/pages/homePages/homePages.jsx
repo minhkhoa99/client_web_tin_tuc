@@ -3,7 +3,6 @@ import image from "../../image/z4042263610199_ac6e69bf6f323b5fcf7a9b2df33b74de.j
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import SileDer from "../../components/sileder/SileDer";
 import Contact from "../../components/contact/Contact";
 
 const HomePage = () => {
@@ -11,7 +10,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8000/new/")
+      .get(`${process.env.REACT_APP_API}/new/`)
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);

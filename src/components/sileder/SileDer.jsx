@@ -9,7 +9,7 @@ const SileDer = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/upload-image/")
+      .get(`${process.env.REACT_APP_API}/upload-image/`)
       .then((data) => {setDataSlider(data.data.data)})
       .catch((err) => console.log(err));
   }, []);
@@ -26,7 +26,7 @@ const SileDer = () => {
             console.log(`file://${e.link}`);
             return (
               <div key={e.id}>
-                <img src={`http://localhost:8000/${e.link}`} className="w-100" alt="" />
+                <img src={`${process.env.REACT_APP_API}/${e.link}`} className="w-100" alt="" />
               </div>
             );
           })}

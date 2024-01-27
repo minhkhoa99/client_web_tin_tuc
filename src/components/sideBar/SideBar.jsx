@@ -10,7 +10,7 @@ export default function SideBar() {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8000/new/host-new/1")
+      .get(`${process.env.REACT_APP_API}/new/host-new/1`)
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);

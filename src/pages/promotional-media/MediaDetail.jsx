@@ -6,7 +6,7 @@ const MediaDetail = () => {
     const {id} = useParams()
     const [dataDetail, setDataDetail] = useState()
     useEffect(() => {
-        axios.get(`http://localhost:8000/new/${id}`)
+        axios.get(`${process.env.REACT_APP_API}/new/${id}`)
         .then((data) => setDataDetail(data.data.data))
         .catch((err) => console.log(err))
     }, [id])
