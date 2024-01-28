@@ -15,6 +15,11 @@ const PropagateDetail = () => {
     return(
         <div className='container-detail mx-3'>
             <h3>{dataDetail?.title}</h3>
+          <img
+        className="w-100 h-100"
+        src={`${process.env.REACT_APP_API}/${dataDetail?.avatar}`}
+        alt=""
+      />
             <p>{dataDetail?.createdAt}</p>
             <div dangerouslySetInnerHTML={{ __html: htmlString }} />
 

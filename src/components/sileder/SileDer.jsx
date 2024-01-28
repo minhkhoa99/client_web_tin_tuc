@@ -22,8 +22,6 @@ const SileDer = () => {
       <div className="my-3">
         <Carousel autoplay>
           {dataSlider.map((e) => {
-            console.log(e.link);
-            console.log(`file://${e.link}`);
             return (
               <div key={e.id}>
                 <img src={`${process.env.REACT_APP_API}/${e.link}`} className="w-100" alt="" />

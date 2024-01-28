@@ -15,6 +15,11 @@ const MoviesDetail = () => {
     return(
         <div className='container-detail'>
             <h3>{dataDetail?.title}</h3>
+          <img
+        className="w-100 h-100"
+        src={`${process.env.REACT_APP_API}/${dataDetail?.avatar}`}
+        alt=""
+      />
             <p>{dataDetail?.createdAt}</p>
             <div dangerouslySetInnerHTML={{ __html: htmlString }} />
 

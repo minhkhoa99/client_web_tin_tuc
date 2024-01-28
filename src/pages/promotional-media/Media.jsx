@@ -30,7 +30,11 @@ const Media = () => {
             handleClick(items.id);
           }}>
             <div className="col-5 card-image">
-              <img src={imageContent} alt="" className="w-100 h-100" />
+              <img
+                        className="w-100 h-100"
+                        src={`${process.env.REACT_APP_API}/${items.avatar}`}
+                        alt=""
+                      />
             </div>
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>

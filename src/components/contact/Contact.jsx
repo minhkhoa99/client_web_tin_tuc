@@ -8,47 +8,38 @@ import image7 from "../../image/TTVH.jpg"
 import image8 from "../../image/XTDL.jpg"
 import image9 from "../../image/VHNT.jpg"
 import image2 from "../../image/BAO TANG.jpg"
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 
 
 const Contact = () => {
+    const [link,setLink] = useState([])
+    useEffect(() => {
+        axios.get("http://localhost:8000/link")
+        .then((data) => setLink(data.data.data))
+        .catch((err) => console.log(err))
+    }, [])
+    console.log(link);
     return(
         <div>
             <div className="container-link">
                 <h3 className="text-center my-3">LIÊN KẾT WEBSITE</h3>
                 <div className="py-5 row">
-                    <div className="col-1">
-                    <img src={image1} className="w-100" alt="" />
+                    {link.map((e) => {
+                        return(
+                           <div className="col-1" key={e.id}>
+                            <a href={e.link}>
+                            <img src={`${process.env.REACT_APP_API}/${e.image}`} className="w-100" alt="" />
 
-                    </div>
-                    <div className="col-1">
-                    <img src={image2} className="w-100" alt="" />
+                            </a>
 
-                    </div>
-                    <div className="col-1">
-                    <img src={image3} className="w-100" alt="" />
-
-                    </div>
-                    <div className="col-1">
-                    <img src={image4} className="w-100" alt="" />
-
-                    </div>
-                    <div className="col-1">
-                    <img src={image5} className="w-100" alt="" />
-
-                    </div>
-                    <div className="col-1">
-                    <img src={image7} className="w-100" alt="" />
-
-                    </div>
-                    <div className="col-1">
-                    <img src={image8} className="w-100" alt="" />
-
-                    </div>
-                    <div className="col-1">
-                    <img src={image9} className="w-100" alt="" />
-
-                    </div>
+                    </div>  
+                        )
+                    })}
+                   
+                  
+                    
 
                 </div>
             </div>
