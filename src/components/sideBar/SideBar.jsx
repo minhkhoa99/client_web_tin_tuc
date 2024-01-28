@@ -1,19 +1,39 @@
 import React, { useEffect, useState } from "react";
 import "./sideBar.css";
+import 'video-react/dist/video-react.css';
 import image1 from "../../image/TAP SAN T8-2016_jpg.jpg";
 import image2 from "../../image/Du lich Dong nai_jpg.jpg";
 import image3 from "../../image/DuLichXuanLoc.jpg";
 import { Select } from "antd";
+import ReactPlayer from 'react-player/lazy';
 import axios from "axios";
 
 export default function SideBar() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
+  const [video,setVideo] = useState([])
   useEffect(() => {
     axios
-      .get("http://localhost:8000/new/host-new/1")
+      .get(`${process.env.REACT_APP_API}/new/host-new/1`)
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API}/upload-video/`)
+    .then((data) => setVideo(data.data))
+    .catch((err) => console.log(err))
+  }, [])
+
+const urlVideo = video?.data;
+const videoHot = urlVideo?.find((e) => e.id === 1)
+
+
+  const handleError = (error) => {
+    console.error('An error occurred:', error);
+    // You can handle the error here, e.g., display a message to the user
+  };
+
+
   return (
     <div className="sideBar">
       <div className="titleNews p-1 mb-3">
@@ -21,23 +41,18 @@ export default function SideBar() {
       </div>
       <ul style={{ overflowY: "scroll", height: "400px" }}>
         {data.map((e) => {
-          return <li key={e.id}>{e.title}</li>;
+         
+          return <li key={e.id} ><a className="text-decoration-none text-secondary" href={`/news/${e.id}`}>{e.title}</a> </li>;
         })}
       </ul>
-
-      {/* <div className="p-1 text-center">
-        <h4 className="title-video mb-4">Video</h4>
-        <video controls width="500">
-          <source
-            src="https://youtu.be/lfkqJOuHN14?si=VuKGiPBGj6n3Ddum"
-            type="video/*"
-          />
-          Your browser does not support the video tag.
-        </video>
-        <div className="titleNews p-2">
-          <h6>AUDIO PHAT THANH TUYÊN TRUYỀN</h6>
-        </div>
-      </div> */}
+      <div className="p-3 text-center border-top">
+        <h4>VIDEO</h4>
+      </div>
+      <div className="w-100">
+        
+      <ReactPlayer className="w-100" url={`${process.env.REACT_APP_API}/${videoHot?.link}`} controls
+        onError={handleError} />
+      </div>
       <div className="menu my-3">
         <div>
           <a href="/">

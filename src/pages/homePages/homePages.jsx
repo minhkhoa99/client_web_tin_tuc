@@ -3,18 +3,32 @@ import image from "../../image/z4042263610199_ac6e69bf6f323b5fcf7a9b2df33b74de.j
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import SileDer from "../../components/sileder/SileDer";
 import Contact from "../../components/contact/Contact";
+import ReactPlayer from "react-player";
 
 const HomePage = () => {
   const [data, setData] = useState([]);
+  const [video,setVideo] = useState([])
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8000/new/")
+      .get(`${process.env.REACT_APP_API}/new/`)
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:8000/upload-video/")
+    .then((data) => setVideo(data.data))
+    .catch((err) => console.log(err))
+  }, [])
+
+console.log(video);
+
+  const videoList = video?.data?.slice(0, 4);
+  const videoHot = video?.data?.find((e) => e.id === 1)
+
+
 
   const newsEvent = data.filter((e) => e.category_id === 1);
   const newEventData = newsEvent.slice(0, 5);
@@ -60,7 +74,7 @@ const HomePage = () => {
                   >
                       <img
                         className="card-img-top image-new"
-                        src={image}
+                        src={`${process.env.REACT_APP_API}/${e.avatar}`}
                         alt=""
                       />
 
@@ -103,7 +117,11 @@ const HomePage = () => {
                       handleClick(e.id);
                     }}
                   >
-                    <img className="w-100" src={image} alt="" />
+                    <img
+                        className="card-img-top image-new"
+                        src={`${process.env.REACT_APP_API}/${e.avatar}`}
+                        alt=""
+                      />
                     <h6 className="card-body-title">{e.title}</h6>
                       <p className="card-body-short_title">{e.short_title}</p>
                     <button>Đọc thêm</button>
@@ -127,26 +145,22 @@ const HomePage = () => {
           </div>
           <div className="row ">
             <div className="col-7 cardVideo">
-              <video width="100%" height="100%" controls>
-                <source
-                  src="https://youtu.be/ZaeQ6eJPFfw?si=qdiFxf-XTzdgTzmH"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
+            <ReactPlayer className="w-100" url={`${process.env.REACT_APP_API}/${videoHot?.link}`} controls
+        />
             </div>
             <div className="col-5 cardMenu">
-              {newPublic.map((e) => {
+              {videoList?.map((e) => {
                 return (
                   <div
-                    className="d-flex card-item-menu my-3"
+                    className="d-flex card-item-menu"
                     key={e.id}
                     onClick={() => {
                       handleClick(e.id);
                     }}
                   >
-                    <img src={image} alt="" className="w-25 h-100 me-2" />
-                    <h6 className="card-body-title">{e.title}</h6>
+                    <ReactPlayer className="w-50 h-50" url={`${process.env.REACT_APP_API}/${e?.link}`} controls
+        />
+                    <h6 className="card-body-title m-2">{e.title}</h6>
                   </div>
                 );
               })}
@@ -178,7 +192,11 @@ const HomePage = () => {
                       handleClick(e.id);
                     }}
                   >
-                    <img className="w-100" src={image} alt="" />
+                    <img
+                        className="card-img-top image-new"
+                        src={`${process.env.REACT_APP_API}/${e.avatar}`}
+                        alt=""
+                      />
                     <h6 className="card-body-title">{e.title}</h6>
                       <p className="card-body-short_title">{e.short_title}</p>
                     <button>Đọc thêm</button>

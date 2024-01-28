@@ -10,7 +10,7 @@ const Movies = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8000/new/")
+      .get(`${process.env.REACT_APP_API}/new/`)
       .then((data) => setDataNew(data.data.data))
       .catch((err) => console.log(err));
   }, []);
@@ -32,7 +32,11 @@ const Movies = () => {
             handleClick(items.id);
           }}>
             <div className="col-5 card-image">
-              <img src={imageContent} alt="" className="w-100 h-100" />
+            <img
+                        className="w-100 h-100"
+                        src={`${process.env.REACT_APP_API}/${items.avatar}`}
+                        alt=""
+                      />
             </div>
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>

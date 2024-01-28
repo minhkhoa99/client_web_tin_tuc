@@ -9,7 +9,7 @@ const PublicArt = () => {
   const [data,setData] = useState([])
   useEffect(() => {
     axios
-      .get("http://localhost:8000/new/")
+      .get(`${process.env.REACT_APP_API}/new/`)
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);
