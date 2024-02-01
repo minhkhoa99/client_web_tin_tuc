@@ -8,7 +8,7 @@ import ReactPlayer from "react-player";
 
 const HomePage = () => {
   const [data, setData] = useState([]);
-  const [video,setVideo] = useState([])
+  const [video,setVideo] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
     axios
@@ -23,7 +23,6 @@ const HomePage = () => {
     .catch((err) => console.log(err))
   }, [])
 
-console.log(video);
 
   const videoList = video?.data?.slice(0, 4);
   const videoHot = video?.data?.find((e) => e.id === 1)

@@ -1,9 +1,7 @@
 import "./News.css";
-import imageContent from "../../image/THE THAO_jpg.jpg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../../components/navbar/Navbar";
 
 const News = () => {
   const [dataNew, setDataNew] = useState([]);
@@ -15,7 +13,9 @@ const News = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const newsEvent = dataNew.filter((e) => e.category_id === 1)
+  console.log(dataNew);
+
+  const newsEvent = dataNew.filter((e) => e.category_id === 1);
 
   const handleClick = (id) => {
     navigate(`/news/${id}`);
@@ -28,26 +28,25 @@ const News = () => {
       </h2>
       {newsEvent.map((items) => {
         return (
-          <div className="row my-5 card-media pb-5 mx-3" key={items.id}
-          onClick={() => {
-            handleClick(items.id);
-          }} >
+          <div
+            className="row my-5 card-media pb-5 mx-3"
+            key={items.id}
+            onClick={() => {
+              handleClick(items.id);
+            }}
+          >
             <div className="col-5 card-image">
-            <img
-                        className="w-100 h-100"
-                        src={`${process.env.REACT_APP_API}/${items.avatar}`}
-                        alt=""
-                      />
+              <img
+                className="w-100 h-100"
+                src={`${process.env.REACT_APP_API}/${items.avatar}`}
+                alt=""
+              />
             </div>
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
               <p>{items.short_title}</p>
-              <button
-                
-              >
-                Xem tiếp
-              </button>
+              <button>Xem tiếp</button>
             </div>
           </div>
         );

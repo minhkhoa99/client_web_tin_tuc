@@ -7,16 +7,21 @@ import image3 from "../../image/DuLichXuanLoc.jpg";
 import { Select } from "antd";
 import ReactPlayer from 'react-player/lazy';
 import axios from "axios";
+import Statistics from "../statistics/Statistics";
 
 export default function SideBar() {
   const [data, setData] = useState([])
   const [video,setVideo] = useState([])
+
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API}/new/host-new/1`)
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
   }, []);
+
+
+
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API}/upload-video/`)
@@ -145,12 +150,7 @@ const videoHot = urlVideo?.find((e) => e.id === 1)
             },
           ]}
         />
-        <div className="statistical py-2 mb-3">
-          <h6 className="m-0">THÔNG KÊ LƯỢT TRUY CẬP</h6>
-        </div>
-        <p>Hôm nay: 898</p>
-        <p>Hôm qua: 2,898</p>
-        <p>Tất cả: 3,7884,898</p>
+        <Statistics />
       </div>
     </div>
   );
