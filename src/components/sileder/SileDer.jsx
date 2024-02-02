@@ -13,7 +13,6 @@ const SileDer = () => {
       .then((data) => {setDataSlider(data.data.data)})
       .catch((err) => console.log(err));
   }, []);
-  console.log(dataSlider);
 
   return (
     <div className="text-center container-sileder">
@@ -23,8 +22,8 @@ const SileDer = () => {
         <Carousel autoplay>
           {dataSlider.map((e) => {
             return (
-              <div key={e.id}>
-                <img src={`${process.env.REACT_APP_API}/${e.link}`} className="w-100" alt="" />
+              <div key={e.id} className="carousel-slide">
+                <img src={`${process.env.REACT_APP_API}/${e.link}`}  className="carousel-image" alt="" />
               </div>
             );
           })}
