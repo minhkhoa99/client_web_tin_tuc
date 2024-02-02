@@ -9,6 +9,6 @@
   
   .carousel-image {
     width: 100%; /* Đảm bảo rằng ảnh sẽ không vượt quá chiều rộng của slide */
-    height: 100%; /* Đảm bảo tỉ lệ hình ảnh không bị méo mó */
+    height: 100%; 
     object-fit: contain;
   }
