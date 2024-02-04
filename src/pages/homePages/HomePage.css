@@ -16,9 +16,10 @@
 }
 .image-new{
     border-radius: 100% !important;
-    height: 170px;
+    height: 200px;
     padding: 2%;
     border: 10px solid rgb(46, 235, 28) !important;
+    object-fit: contain;
 }
 .card-news{
     text-align: left;

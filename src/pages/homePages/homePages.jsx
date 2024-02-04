@@ -65,7 +65,7 @@ const HomePage = () => {
               {newEventData.map((e) => {
                 return (
                   <div
-                    className="col-2 h-100 news-events card-news"
+                    className="col-3 h-100 news-events card-news"
                     key={e.id}
                     onClick={() => {
                       handleClick(e.id);

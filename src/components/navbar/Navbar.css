@@ -1,6 +1,22 @@
 #nav-header a{
-    color: green;
-    font-weight: 500;
-    padding: 0px !important;
- };
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+ }
+ #nav-header{
+    width: 100%;
+ }
+#navbarNav{
+    background-color: #008001 !important;
+ }
+ .dropdown-menu{
+    background-color: #008001 !important;
+ }
+ .nav-dropdown:hover {
+    background-color: #008001;
+  }
+  .nav-dropdown{
+    border-bottom: 1px solid rgb(189, 189, 189);
+    padding: 13px;
+  }
 
