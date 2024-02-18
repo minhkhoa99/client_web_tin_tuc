@@ -14,11 +14,7 @@
 .card-image{
     height: 200px;
 }
-.conten-card button{
-    border: none;
-    color: #01776B;
-    font-size: 15px;
-}
+
 .card-media{
     border-bottom: 2px solid rgb(207, 204, 204);
     align-items: center;

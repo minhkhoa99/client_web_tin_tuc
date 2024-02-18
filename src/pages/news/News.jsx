@@ -13,13 +13,15 @@ const News = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(dataNew);
 
   const newsEvent = dataNew.filter((e) => e.category_id === 1);
 
   const handleClick = (id) => {
     navigate(`/news/${id}`);
   };
+
+  newsEvent.sort((a,b) => (b.id-a.id))
+  console.log(newsEvent);
 
   return (
     <div className="media-container text-center">
@@ -46,7 +48,7 @@ const News = () => {
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
               <p>{items.short_title}</p>
-              <button>Xem tiếp</button>
+              <button className="btn-detail">Xem tiếp</button>
             </div>
           </div>
         );

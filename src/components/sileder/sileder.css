@@ -2,13 +2,21 @@
     color: #B1292B;
     font-weight: 700
 }
-.carousel-slide {
-    width: 100%;
-    height: 700px; /* Đảm bảo rằng các slide trong Carousel có chiều rộng 100% */
-  }
+
   
-  .carousel-image {
-    width: 100%; /* Đảm bảo rằng ảnh sẽ không vượt quá chiều rộng của slide */
-    height: 100%; 
-    object-fit: contain;
-  }
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98% !important;
+  height: 75vh;
+  background-size: cover;
+
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}

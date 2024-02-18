@@ -12,7 +12,7 @@ const NewDetail = () => {
       .catch((err) => console.log(err));
   }, [id]);
   const htmlString = dataDetail?.content;
-  console.log(dataDetail);
+  
 
   return (
     <div className="container-detail mx-3">
