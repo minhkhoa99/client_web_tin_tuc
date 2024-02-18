@@ -49,8 +49,8 @@ const Navbar = () => {
                         className="p-0 mx-2"
                       >
                         <NavDropdown.Item
-                          href="/introduce"
-                          className="nav-dropdown pb-2"
+                          href="/page"
+                          className="nav-dropdown"
                         >
                           Giới thiệu chung
                         </NavDropdown.Item>
@@ -61,12 +61,21 @@ const Navbar = () => {
                           Tổ chức bộ máy
                         </NavDropdown.Item>
                         <NavDropdown.Item
-                          href="/introduce"
+                          href="/introduce/sitemap"
                           className="nav-dropdown"
                         >
                           Sơ đồ trang
                         </NavDropdown.Item>
                       </NavDropdown>
+                      <li className="nav-item mx-2">
+                        <a
+                          className="nav-link active"
+                          aria-current="page"
+                          href="/news"
+                        >
+                          Tin tức sự kiện
+                        </a>
+                      </li>
                       <NavDropdown
                         title="Nghiệp vụ văn hóa"
                         id="basic-nav-dropdown"
@@ -82,7 +91,7 @@ const Navbar = () => {
                           href="/public-art"
                           className="nav-dropdown"
                         >
-                          TNghệ thuật quần chúng
+                          Nghệ thuật quần chúng
                         </NavDropdown.Item>
                       </NavDropdown>
 
@@ -119,37 +128,37 @@ const Navbar = () => {
                         className="p-0 mx-2"
                       >
                         <NavDropdown.Item
-                          href="/news"
+                          href="/DirectiveText"
                           className="nav-dropdown pb-2"
                         >
                           Văn bản chỉ đạo - Điều hành
                         </NavDropdown.Item>
                         <NavDropdown.Item
-                          href="/news"
+                          href="/commands"
                           className="nav-dropdown"
                         >
                           Khẩu lệnh
                         </NavDropdown.Item>
                         <NavDropdown.Item
-                          href="/news"
+                          href="/radioarticle"
                           className="nav-dropdown"
                         >
                           Bài phát thanh
                         </NavDropdown.Item>
                         <NavDropdown.Item
-                          href="/news"
+                          href="/exhibitionset"
                           className="nav-dropdown"
                         >
                           Bộ triển lãm
                         </NavDropdown.Item>
                         <NavDropdown.Item
-                          href="/news"
+                          href="/paintingset"
                           className="nav-dropdown"
                         >
                           Bộ tranh cổ động
                         </NavDropdown.Item>
                         <NavDropdown.Item
-                          href="/news"
+                          href="/notification"
                           className="nav-dropdown"
                         >
                           Thông báo

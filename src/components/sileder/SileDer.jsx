@@ -9,7 +9,7 @@ const SileDer = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API}/upload-image/`)
+      .get(`${process.env.REACT_APP_API}/upload-image-slide/`)
       .then((data) => {setDataSlider(data.data.data)})
       .catch((err) => console.log(err));
   }, []);

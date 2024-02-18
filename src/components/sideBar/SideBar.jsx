@@ -44,10 +44,10 @@ const videoHot = urlVideo?.find((e) => e.id === 1)
       <div className="titleNews p-1 mb-3">
         <h4>Tin Nổi Bật</h4>
       </div>
-      <ul style={{ overflowY: "scroll", height: "400px" }}>
+      <ul style={{ overflowY: "scroll", height: "400px", paddingRight: "3%" }}>
         {data.map((e) => {
          
-          return <li key={e.id} ><a className="text-decoration-none text-secondary" href={`/news/${e.id}`}>{e.title}</a> </li>;
+          return <li key={e.id} className="my-3" ><a className="text-decoration-none text-secondary" href={`/news/${e.id}`}>{e.title}</a> </li>;
         })}
       </ul>
       <div className="p-3 text-center border-top">
@@ -55,7 +55,7 @@ const videoHot = urlVideo?.find((e) => e.id === 1)
       </div>
       <div className="w-100">
         
-      <ReactPlayer className="w-100" url={`${process.env.REACT_APP_API}/${videoHot?.link}`} controls
+      <ReactPlayer className="w-100 h-100" url={`${process.env.REACT_APP_API}/${videoHot?.link}`} controls
         onError={handleError} />
       </div>
       <div className="menu my-3">

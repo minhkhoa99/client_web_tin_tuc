@@ -23,7 +23,7 @@ const Movies = () => {
   return (
     <div className="media-container text-center">
       <h2>
-        CHIẾU PHIM - <span>LƯU ĐỘNG</span>{" "}
+        NGHIỆP VỤ - <span>ĐIỆN ẢNH</span>{" "}
       </h2>
       {newsEvent.map((items) => {
         return (

@@ -1,0 +1,12 @@
+.titleNotification{
+    color: green;
+}
+.notification h5{
+    color: red;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+.notification{
+    background-color: #EFEFEF;
+    align-items: center;
+}

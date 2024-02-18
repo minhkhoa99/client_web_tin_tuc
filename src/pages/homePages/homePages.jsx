@@ -19,17 +19,15 @@ const HomePage = () => {
 
   useEffect(() => {
     axios.get("http://localhost:8000/upload-video/")
-    .then((data) => setVideo(data.data))
+    .then((data) => setVideo(data.data.data))
     .catch((err) => console.log(err))
   }, [])
 
-
-  const videoList = video?.data?.slice(0, 4);
-  const videoHot = video?.data?.find((e) => e.id === 1)
-
+  const videoHot = video?.find((e) => e.id === 1)
 
 
   const newsEvent = data.filter((e) => e.category_id === 1);
+  console.log(newsEvent);
   const newEventData = newsEvent.slice(0, 5);
   const media = data.filter((e) => e.category_id === 2);
   const newMedia = media.slice(0, 4);
@@ -42,24 +40,17 @@ const HomePage = () => {
   const handleClick = (id) => {
     navigate(`/news/${id}`);
   };
+  const clickVideoDetail = (id) => {
+    navigate(`/public-art/${id}`)
+  }
 
   return (
     <div className="row">
       <div className="home-page">
         <div className="divNewsTitle mx-5">
-          <h2 className="mb-3">
+          <h2 className="mb-5">
             TIN TỨC - <span>SỰ KIỆN</span>
           </h2>
-          <div className="d-flex justify-content-between text-card mb-2">
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-          </div>
           <div className="container">
             <div className="row carde-position">
               {newEventData.map((e) => {
@@ -72,7 +63,7 @@ const HomePage = () => {
                     }}
                   >
                       <img
-                        className="card-img-top image-new"
+                        className="card-img-top image-new  image-news-hompage"
                         src={`${process.env.REACT_APP_API}/${e.avatar}`}
                         alt=""
                       />
@@ -92,19 +83,10 @@ const HomePage = () => {
           </div>
         </div>
         <div className="divNewsTitle card-news-one mx-5">
-          <h2 className="my-3">
+          <h2 className="my-4">
             TUYÊN TRUYỀN CỔ ĐỘNG - <span>TRIỂN LÃM</span>
           </h2>
-          <div className="d-flex justify-content-between text-card mb-5">
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-          </div>
+         
           <div className="container">
             <div className="row">
               {newMedia.map((e) => {
@@ -117,7 +99,7 @@ const HomePage = () => {
                     }}
                   >
                     <img
-                        className="card-img-top image-new"
+                        className="card-img-top mb-3"
                         src={`${process.env.REACT_APP_API}/${e.avatar}`}
                         alt=""
                       />
@@ -132,34 +114,26 @@ const HomePage = () => {
         </div>
         <div className="propagate py-3">
           <h3 className="my-2">NGHỆ THUẬT QUẦN CHÚNG</h3>
-          <div className="d-flex justify-content-between text-card mb-2">
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-          </div>
+          
           <div className="row ">
-            <div className="col-7 cardVideo">
-            <ReactPlayer className="w-100" url={`${process.env.REACT_APP_API}/${videoHot?.link}`} controls
+            <div className="col-8 cardVideo">
+            <ReactPlayer className="w-100 videoHot" url={`${process.env.REACT_APP_API}/${videoHot?.link}`} controls
         />
             </div>
-            <div className="col-5 cardMenu">
-              {videoList?.map((e) => {
+            <div className="col-4 cardMenu">
+              {video?.map((e) => {
                 return (
                   <div
                     className="d-flex card-item-menu"
                     key={e.id}
                     onClick={() => {
-                      handleClick(e.id);
+                      clickVideoDetail(e.id);
                     }}
                   >
-                    <ReactPlayer className="w-50 h-50" url={`${process.env.REACT_APP_API}/${e?.link}`} controls
+                    <ReactPlayer className="videoList" url={`${process.env.REACT_APP_API}/${e?.link}`} controls
         />
-                    <h6 className="card-body-title m-2">{e.title}</h6>
+
+                    <h6 className="card-body-title title-video-list m-2">{e.title}</h6>
                   </div>
                 );
               })}
@@ -167,19 +141,10 @@ const HomePage = () => {
           </div>
         </div>
         <div className="divNewsTitle my-3 mx-5">
-          <h2 className="my-3">
+          <h2 className="my-4">
             TUYÊN TRUYỀN - <span>LƯU ĐỘNG</span>
           </h2>
-          <div className="d-flex justify-content-between text-card mb-5">
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-          </div>
+         
           <div className="container">
             <div className="row">
               {newPropagate.map((e) => {
@@ -192,7 +157,7 @@ const HomePage = () => {
                     }}
                   >
                     <img
-                        className="card-img-top image-new"
+                        className="card-img-top mb-3"
                         src={`${process.env.REACT_APP_API}/${e.avatar}`}
                         alt=""
                       />
@@ -209,16 +174,7 @@ const HomePage = () => {
           <h2 className="my-3">
             CHIẾU PHIM - <span>LƯU ĐỘNG</span>
           </h2>
-          <div className="d-flex justify-content-between text-card mb-5">
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-            <p>
-              Lễ kỉ niệm 50 năm thiết lập mối quan hệ ngoại giao Việt Nam - Nhật
-              bản
-            </p>
-          </div>
+         
           <div className="container">
             <div className="row">
               {newMovies.map((e) => {
@@ -233,7 +189,7 @@ const HomePage = () => {
                     <div className="row">
                       <div className="col-5">
                         <img
-                          className="image-new-movies w-100 h-100"
+                          className="image-new-movies w-100 "
                           src={image}
                           alt=""
                         />

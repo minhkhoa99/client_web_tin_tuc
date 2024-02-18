@@ -21,7 +21,7 @@ const Media = () => {
   return (
     <div className="media-container text-center">
       <h2>
-        TRUYỀN THÔNG  - <span>CỔ ĐỘNG</span>{" "}
+       TUYÊN TRUYỀN CỔ ĐỘNG  - <span>TRIỂN LÃM</span>{" "}
       </h2>
       {newMedia.map((items) => {
         return (
