@@ -1,23 +1,29 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 
 const Statistics = () => {
-  const [log, setLog] = useState()
+  const [viewCount, setViewCount] = useState(0);
 
-    useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API}/log-length`)
-        .then((data) => setLog(data.data) )
-        .catch((err) => console.log(err))
-      }, [])
-    return (
-        <div>
+  const increaseViewCount = () => {
+    setViewCount((prevCount) => prevCount + 1);
+    const storedViewCount = localStorage.getItem('viewCount');
+    const newViewCount = storedViewCount ? parseInt(storedViewCount, 10) + 1 : 1;
+    localStorage.setItem('viewCount', newViewCount.toString());
+  };
 
-        <div className="statistical py-2 mb-3">
-          <h6 className="m-0">THÔNG KÊ LƯỢT TRUY CẬP</h6>
-        </div>
-        <p>Tất cả: {log}</p>
+  const localstorageView = localStorage.getItem("viewCount")
+
+  useEffect(() => {
+    increaseViewCount();
+  }, []);
+
+  return (
+    <div>
+      <div className="statistical py-2 mb-3">
+        <h6 className="m-0">THÔNG KÊ LƯỢT TRUY CẬP</h6>
       </div>
-    )
+      <p>Tất cả: {localstorageView}</p>
+    </div>
+  );
 }
 
-export default Statistics
+export default Statistics;

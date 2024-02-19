@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import cheerio from "cheerio"
 
 const NewDetail = () => {
   const { id } = useParams();
@@ -11,7 +12,25 @@ const NewDetail = () => {
       .then((data) => setDataDetail(data.data.data))
       .catch((err) => console.log(err));
   }, [id]);
-  const htmlString = dataDetail?.content;
+  const renderHTML = () => {
+    if (!dataDetail) return null;
+
+    const $ = cheerio.load(dataDetail.content);
+
+    // Tìm và chọc vào các thẻ <img> và <iframe>
+    $('img, iframe').each((index, element) => {
+      if ($(element).is('img')) {
+        // Xử lý cho thẻ <img>
+        $(element).attr('style', 'max-width: 100%; height: auto;');
+      } else if ($(element).is('iframe')) {
+        // Xử lý cho thẻ <iframe>
+        $(element).attr('style', 'width: 100%; height: 500px; border: 1px solid black;');
+      }
+    });
+
+    return $.html();
+  };
+
   
 
   return (
@@ -23,7 +42,7 @@ const NewDetail = () => {
         alt=""
       />
       <p>{dataDetail?.createdAt}</p>
-      <div dangerouslySetInnerHTML={{ __html: htmlString }} />
+      <div dangerouslySetInnerHTML={{ __html: renderHTML() }} />
     </div>
   );
 };

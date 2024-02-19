@@ -11,7 +11,6 @@ const MediaDetail = () => {
         .catch((err) => console.log(err))
     }, [id])
 
-    console.log(dataDetail);
 
     const htmlString = dataDetail?.content
 
