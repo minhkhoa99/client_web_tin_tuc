@@ -25,7 +25,11 @@ import Commands from "./pages/Commands/Commands";
 import Radioarticle from "./pages/Radioarticle/Radioarticle";
 import Exhibitionset from "./pages/Exhibitionset/Exhibitionset";
 import Paintingset from "./pages/Paintingset/Paintingset";
+import Script from "./pages/script/Script";
+import ScriptDetail from "./pages/script/ScriptDetail";
 function App() {
+
+
   return (
     <div className="App">
       <Headers />
@@ -65,6 +69,11 @@ function App() {
 
                 <Route path="/news/:id" element={<NewDetail />}></Route>
                 <Route path="/propagate/" element={<Propagate />}></Route>
+                <Route path="/script/" element={<Script />}></Route>
+                <Route path="/script/:id" element={<ScriptDetail />}></Route>
+
+
+
                 <Route
                   path="/propagate/:id"
                   element={<PropagateDetail />}

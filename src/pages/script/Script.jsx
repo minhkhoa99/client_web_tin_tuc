@@ -1,9 +1,8 @@
-import "./Radioarticle.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Radioarticle = () => {
+const Script = () => {
   const [dataNew, setDataNew] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
@@ -13,41 +12,39 @@ const Radioarticle = () => {
       .catch((err) => console.log(err));
   }, []);
 
-
-  const newsEvent = dataNew.filter((e) => e.category_id === 1);
+  const newsEvent = dataNew.filter((e) => e.category_id === 3)
 
   const handleClick = (id) => {
-    navigate(`/news/${id}`);
+    navigate(`/script/${id}`);
   };
-
-  newsEvent.sort((a,b) => (b.id-a.id))
 
   return (
     <div className="media-container text-center">
       <h2>
-        BÀI PHÁT THANH
+        KỊCH BẢN - <span>TUYÊN TRUYỀN</span>{" "}
       </h2>
       {newsEvent.map((items) => {
         return (
-          <div
-            className="row my-5 card-media pb-5 mx-3"
-            key={items.id}
-            onClick={() => {
-              handleClick(items.id);
-            }}
-          >
+          <div className="row my-5 card-media pb-5 mx-3" key={items.id}
+          onClick={() => {
+            handleClick(items.id);
+          }}>
             <div className="col-5 card-image">
               <img
-                className="w-100 h-100"
-                src={`${process.env.REACT_APP_API}/${items.avatar}`}
-                alt=""
-              />
+                        className="w-100 h-100"
+                        src={`${process.env.REACT_APP_API}/${items.avatar}`}
+                        alt=""
+                      />
             </div>
             <div className="col-7 conten-card">
               <h4>{items.title}</h4>
               <p>{items.updatedAt}</p>
               <p>{items.short_title}</p>
-              <button className="btn-detail">Xem tiếp</button>
+              <button
+                
+              >
+                Xem tiếp
+              </button>
             </div>
           </div>
         );
@@ -56,4 +53,4 @@ const Radioarticle = () => {
   );
 };
 
-export default Radioarticle;
+export default Script;

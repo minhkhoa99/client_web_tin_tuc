@@ -27,7 +27,6 @@ const HomePage = () => {
 
 
   const newsEvent = data.filter((e) => e.category_id === 1);
-  console.log(newsEvent);
   const newEventData = newsEvent.slice(0, 5);
   const media = data.filter((e) => e.category_id === 2);
   const newMedia = media.slice(0, 4);
@@ -124,16 +123,21 @@ const HomePage = () => {
               {video?.map((e) => {
                 return (
                   <div
-                    className="d-flex card-item-menu"
+                    className="d-flex card-item-menu row"
                     key={e.id}
                     onClick={() => {
                       clickVideoDetail(e.id);
                     }}
                   >
-                    <ReactPlayer className="videoList" url={`${process.env.REACT_APP_API}/${e?.link}`} controls
+                    <div className="col-6">
+                               <ReactPlayer className="videoList" url={`${process.env.REACT_APP_API}/${e?.link}`} controls
         />
+                    </div>
+           <div className="col-6">
+           <h6 className="title-video-list">{e.title}</h6>
 
-                    <h6 className="card-body-title title-video-list m-2">{e.title}</h6>
+           </div>
+
                   </div>
                 );
               })}

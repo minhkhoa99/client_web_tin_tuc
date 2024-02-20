@@ -20,7 +20,6 @@ const Contact = () => {
         .then((data) => setLink(data.data.data))
         .catch((err) => console.log(err))
     }, [])
-    console.log(link);
     return(
         <div>
             <div className="container-link">

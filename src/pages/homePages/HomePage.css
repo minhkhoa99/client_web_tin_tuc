@@ -58,6 +58,12 @@
    .title-video-list{
     font-size: 0.8rem;
     line-height: 1rem;
+    height: 50px;
+    overflow: hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;
    }
    .col-5{
     width: 40.5%;
@@ -179,5 +185,5 @@
 }
 .videoList{
     width: 100% !important;
-    height: 40% !important;
+    height: 100% !important;
 }

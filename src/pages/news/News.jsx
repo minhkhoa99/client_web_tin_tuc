@@ -21,7 +21,6 @@ const News = () => {
   };
 
   newsEvent.sort((a,b) => (b.id-a.id))
-  console.log(newsEvent);
 
   return (
     <div className="media-container text-center">
