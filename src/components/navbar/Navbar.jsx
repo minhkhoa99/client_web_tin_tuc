@@ -107,7 +107,7 @@ const Navbar = () => {
                           Hoạt động tuyên truyền
                         </NavDropdown.Item>
                         <NavDropdown.Item
-                          href="/propagate/"
+                          href="/script/"
                           className="nav-dropdown"
                         >
                           Kịch bản tuyên truyền
