@@ -3,3 +3,20 @@
     color: green;
     font-weight: 500;
  }
+.image-footer {
+    height: 200px !important;
+}
+.title-footer {
+    color: rgb(254, 254, 2);
+}
+
+.container-footer {
+    background: 
+        linear-gradient(to right, rgba(223, 6, 6, 0.7), rgba(228, 189, 189, 0.7)), /* Màu đỏ nhạt từ trái sang phải */
+        url("../../image/z5182758804531_0805fc750005a590ffae56140ee8f2de.jpg") center center / cover; /* Hình ảnh làm nền */
+    height: 200px;
+    background-size: cover; /* Để hình ảnh tự điều chỉnh kích thước */
+    background-repeat: no-repeat;
+    padding: 2%;
+    color: white;
+}

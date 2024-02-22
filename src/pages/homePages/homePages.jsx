@@ -15,7 +15,7 @@ const HomePage = () => {
       .get(`${process.env.REACT_APP_API}/new/`)
       .then((data) => setData(data.data.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     axios.get("http://localhost:8000/upload-video/")
@@ -27,7 +27,8 @@ const HomePage = () => {
 
 
   const newsEvent = data.filter((e) => e.category_id === 1);
-  const newEventData = newsEvent.slice(0, 5);
+  const newsHome = newsEvent.sort((a,b) => b.id - a.id)
+  const newEventData = newsHome.slice(0, 5);
   const media = data.filter((e) => e.category_id === 2);
   const newMedia = media.slice(0, 4);
   const movies = data.filter((e) => e.category_id === 4);
