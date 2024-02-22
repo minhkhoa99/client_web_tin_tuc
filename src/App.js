@@ -28,8 +28,6 @@ import Paintingset from "./pages/Paintingset/Paintingset";
 import Script from "./pages/script/Script";
 import ScriptDetail from "./pages/script/ScriptDetail";
 function App() {
-
-
   return (
     <div className="App">
       <Headers />
@@ -48,18 +46,18 @@ function App() {
                   element={<MediaDetail />}
                 ></Route>
                 <Route path="/public-art" element={<PublicArt />}></Route>
-                <Route path="/DirectiveText" element={<DirectiveText />}></Route>
+                <Route
+                  path="/DirectiveText"
+                  element={<DirectiveText />}
+                ></Route>
                 <Route path="/commands" element={<Commands />}></Route>
                 <Route path="/radioarticle" element={<Radioarticle />}></Route>
-                <Route path="/exhibitionset" element={<Exhibitionset />}></Route>
+                <Route
+                  path="/exhibitionset"
+                  element={<Exhibitionset />}
+                ></Route>
                 <Route path="/paintingset" element={<Paintingset />}></Route>
 
-
-                
-                
-
-
-                
                 <Route
                   path="/public-art/:id"
                   element={<PublicArtDetail />}
@@ -71,8 +69,6 @@ function App() {
                 <Route path="/propagate/" element={<Propagate />}></Route>
                 <Route path="/script/" element={<Script />}></Route>
                 <Route path="/script/:id" element={<ScriptDetail />}></Route>
-
-
 
                 <Route
                   path="/propagate/:id"

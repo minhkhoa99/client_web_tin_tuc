@@ -1,13 +1,5 @@
 import image from "../../image/z5045518417593_c54a7cef1208cf2504c1c8f918ce813c.jpg"
 import "./Contact.css"
-import image1 from "../../image/NHNTTT.jpg"
-import image3 from "../../image/NKTDTD (1).jpg"
-import image4 from "../../image/NKTDTD.jpg"
-import image5 from "../../image/THU VIEN.jpg"
-import image7 from "../../image/TTVH.jpg"
-import image8 from "../../image/XTDL.jpg"
-import image9 from "../../image/VHNT.jpg"
-import image2 from "../../image/BAO TANG.jpg"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
@@ -27,7 +19,7 @@ const Contact = () => {
                 <div className="py-5 row">
                     {link.map((e) => {
                         return(
-                           <div className="col-1" key={e.id}>
+                           <div className="col-2" key={e.id}>
                             <a href={e.link}>
                             <img src={`${process.env.REACT_APP_API}/${e.image}`} className="w-100" alt="" />
 

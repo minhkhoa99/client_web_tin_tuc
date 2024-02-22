@@ -15,7 +15,10 @@ const SileDer = () => {
   }, []);
 
   return (
-    <div className="text-center container-sileder">
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <div className="text-center container-sileder">
       <h2>TRUNG TÂM VĂN HÓA - ĐIỆN ẢNH ĐỒNG NAI</h2>
       <Navbar />
       <div className="my-3">
@@ -30,6 +33,10 @@ const SileDer = () => {
         </Carousel>
       </div>
     </div>
+        </div>
+      </div>
+    </div>
+    
   );
 };
 
